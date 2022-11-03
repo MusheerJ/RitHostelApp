@@ -1,4 +1,4 @@
-package com.oysterkode.laundry.Utils;
+package com.oysterkode.laundry.Laundry;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -31,6 +31,7 @@ public class LaundryDetailsActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
     static int TotalValue;
     String t;
+    String s;
 
 
     @Override
@@ -58,8 +59,15 @@ public class LaundryDetailsActivity extends AppCompatActivity {
 
 
         //current user id
-        SharedPreferences sh = getSharedPreferences("CurrUser", MODE_PRIVATE);
-        String s = sh.getString("currStudId", "");
+
+
+        s = getIntent().getStringExtra("PRN");
+
+        if (s == null) {
+            SharedPreferences sh = getSharedPreferences("CurrUser", MODE_PRIVATE);
+            s = sh.getString("currStudId", "");
+
+        }
 
 
         binding.prnshow.setText(s);
@@ -153,7 +161,7 @@ public class LaundryDetailsActivity extends AppCompatActivity {
         binding.addclothing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(LaundryDetailsActivity.this, Admin2.class);
+                Intent i = new Intent(LaundryDetailsActivity.this, AddLaundryActivity.class);
                 i.putExtra("PRNN", s);
                 startActivity(i);
                 finish();

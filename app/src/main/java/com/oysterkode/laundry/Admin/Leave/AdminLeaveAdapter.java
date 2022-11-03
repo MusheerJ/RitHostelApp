@@ -1,4 +1,4 @@
-package com.oysterkode.laundry.Admin;
+package com.oysterkode.laundry.Admin.Leave;
 
 import android.content.Context;
 import android.content.Intent;

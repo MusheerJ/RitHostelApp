@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#2C2B3F"
+    android:background="@color/bg_color"
     android:layout_height="match_parent"
-    tools:context=".Utils.StaticActivity">
+    tools:context=".Laundry.StaticActivity">
 
     <LinearLayout
         android:id="@+id/l1"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:background="#2C2B3F"
+        android:background="@color/bg_color"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints">

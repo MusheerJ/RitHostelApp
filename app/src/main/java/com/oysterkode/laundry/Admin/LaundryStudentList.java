@@ -1,4 +1,4 @@
-package com.oysterkode.laundry.Utils;
+package com.oysterkode.laundry.Admin;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -19,16 +19,16 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.oysterkode.laundry.Laundry.LaundryDetailsActivity;
 import com.oysterkode.laundry.R;
 import com.oysterkode.laundry.databinding.ActivityMainBinding;
 
-
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class LaundryStudentList extends AppCompatActivity {
     ActivityMainBinding binding;
     ProgressDialog progressDialog;
-    String a ;
+    String a;
 
 
     @Override
@@ -38,7 +38,9 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        progressDialog = new ProgressDialog(MainActivity.this);
+        getSupportActionBar().hide();
+
+        progressDialog = new ProgressDialog(LaundryStudentList.this);
         progressDialog.setTitle("Loading Data");
         progressDialog.setMessage("Please wait ....");
         progressDialog.show();
@@ -47,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
         DatabaseReference myRef = database.getReference("Students");
 
 
-        ArrayList <String> Student = new ArrayList<>();
-        ArrayAdapter <String> stringArrayAdapter = new ArrayAdapter<>(this, R.layout.main_activity_adapter,Student);
+        ArrayList<String> Student = new ArrayList<>();
+        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<>(this, R.layout.main_activity_adapter, Student);
 
         database.getReference().child("Students").addValueEventListener(new ValueEventListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)
@@ -57,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Student.clear();
 
-                for (DataSnapshot snapshot1 : snapshot.getChildren()){
+                for (DataSnapshot snapshot1 : snapshot.getChildren()) {
 
                     String Val = snapshot1.getValue(String.class);
                     Student.add(Val);
@@ -83,34 +85,31 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 a = binding.inputSearch.getText().toString();
-                if(Student.contains(a))
-                {
+                if (Student.contains(a)) {
                     binding.inputSearch.setText("");
-                    Toast.makeText(MainActivity.this,"User Exits",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LaundryStudentList.this, "User Exits", Toast.LENGTH_SHORT).show();
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
 
-                            Intent i = new Intent(MainActivity.this, LaundryDetailsActivity.class);
-                            i.putExtra("PRN",a);
+                            Intent i = new Intent(LaundryStudentList.this, LaundryDetailsActivity.class);
+                            i.putExtra("PRN", a);
                             startActivity(i);
-  //                          finish();
+                            //                          finish();
                         }
                     }, 750);
 
-                }
-                else
-                {
-                    Toast.makeText(MainActivity.this,"The User Doest not exits",Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(LaundryStudentList.this, "The User Doest not exits", Toast.LENGTH_SHORT).show();
                     binding.inputSearch.setText("");
                 }
             }
         });
 
-       binding.AddStudent.setOnClickListener(new View.OnClickListener() {
+        binding.AddStudent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(binding.inputSearch.getText().toString().isEmpty()){
+                if (binding.inputSearch.getText().toString().isEmpty()) {
                     binding.inputSearch.setError("please enter a PRN");
                     return;
                 }
@@ -122,29 +121,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-
-
-
-
         binding.myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String a = Student.get(position);
-                Intent i = new Intent(MainActivity.this, LaundryDetailsActivity.class);
-                i.putExtra("PRN",a);
+                Intent i = new Intent(LaundryStudentList.this, LaundryDetailsActivity.class);
+                i.putExtra("PRN", a);
                 startActivity(i);
             }
         });
 
 
-
-
     }
 
-    @Override
-    public void onBackPressed(){
-        finishAffinity();
-    }
 
 }

@@ -9,6 +9,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+import com.oysterkode.laundry.Admin.LaundryStudentList;
 import com.oysterkode.laundry.R;
 
 public class MainActivity1 extends AppCompatActivity {
@@ -33,7 +34,7 @@ public class MainActivity1 extends AppCompatActivity {
             public void run() {
 
 
-                Intent intent = new Intent(MainActivity1.this, MainActivity.class);
+                Intent intent = new Intent(MainActivity1.this, LaundryStudentList.class);
                 startActivity(intent);
                 finish();
 

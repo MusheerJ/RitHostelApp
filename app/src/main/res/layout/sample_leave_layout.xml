@@ -40,7 +40,7 @@
 
         <com.google.android.material.chip.Chip
             android:id="@+id/leaveStatus"
-            android:layout_width="@dimen/_70sdp"
+            android:layout_width="@dimen/_80sdp"
             android:layout_height="wrap_content"
             android:layout_gravity="right|bottom"
             android:checkable="false"

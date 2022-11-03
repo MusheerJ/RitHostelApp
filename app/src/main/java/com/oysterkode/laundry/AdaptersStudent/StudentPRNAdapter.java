@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.oysterkode.laundry.Models.StudentPRN;
 import com.oysterkode.laundry.R;
-import com.oysterkode.laundry.Utils.StaticActivity;
+import com.oysterkode.laundry.Laundry.StaticActivity;
 import com.oysterkode.laundry.databinding.ContainerPage3Binding;
 
 import java.util.ArrayList;

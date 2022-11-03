@@ -11,32 +11,23 @@
         android:theme="@style/Theme.Laundry"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".Admin.AdminViewLeaveActivity"
+            android:name=".Admin.Complaint.AdminViewComplaintActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.Leave.AdminViewLeaveActivity"
             android:exported="false" />
         <activity
             android:name=".Utils.NewLoginActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".Admin.AddStudentActivity"
             android:exported="false" />
-        <activity android:name=".Student.StudentDashBoardActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".Student.StudentDashBoardActivity"></activity>
         <activity
-            android:name=".Admin.ComplaintListActivity"
+            android:name=".Admin.Complaint.ComplaintListActivity"
             android:exported="false" />
         <activity
-            android:name=".Admin.LeaveListActivity"
+            android:name=".Admin.Leave.LeaveListActivity"
             android:exported="false" />
         <activity
             android:name=".Admin.AdminDashBoardActivity"
@@ -78,26 +69,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Utils.StaticActivity"
+            android:name=".Laundry.StaticActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.AddPRNActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Utils.Admin2"
+            android:name=".Laundry.AddLaundryActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Utils.LaundryDetailsActivity"
+            android:name=".Laundry.LaundryDetailsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Utils.MainActivity"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:name=".Admin.LaundryStudentList"
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".Utils.MainActivity1"
             android:screenOrientation="portrait" />

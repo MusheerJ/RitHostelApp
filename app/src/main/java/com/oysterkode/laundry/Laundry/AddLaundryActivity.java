@@ -1,14 +1,15 @@
-package com.oysterkode.laundry.Utils;
+package com.oysterkode.laundry.Laundry;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
+import com.oysterkode.laundry.Admin.LaundryStudentList;
 import com.oysterkode.laundry.Models.StudentPRN;
 import com.oysterkode.laundry.databinding.ActivityAdmin2Binding;
 
@@ -16,12 +17,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class Admin2 extends AppCompatActivity {
+public class AddLaundryActivity extends AppCompatActivity {
 
     FirebaseDatabase database, db;
     DatabaseReference myRef;
     ActivityAdmin2Binding binding;
-    String shirt, pant, towel , blanket, bedSheet, pillowcover,total;
+    String shirt, pant, towel, blanket, bedSheet, pillowcover, total;
     int shi = 0, pi = 0, ti = 0, bi = 0, bei = 0, x = 0, toti, tat;
     //    Button Add = (Button) findViewById(R.id.addcloth);
 
@@ -31,9 +32,10 @@ public class Admin2 extends AppCompatActivity {
 
         database = FirebaseDatabase.getInstance();
         db = FirebaseDatabase.getInstance();
-       // database.setPersistenceEnabled(true);
-        binding = ActivityAdmin2Binding.inflate(getLayoutInflater());
+        // database.setPersistenceEnabled(true);
+        binding = com.oysterkode.laundry.databinding.ActivityAdmin2Binding.inflate(getLayoutInflater());
 
+        getSupportActionBar().hide();
         binding.addcloth.setVisibility(View.INVISIBLE);
 
         setContentView(binding.getRoot());
@@ -89,9 +91,9 @@ public class Admin2 extends AppCompatActivity {
 
                 String total = String.valueOf(toi);
                 binding.total1.setText(total);
-             //   binding.addcloth.setVisibility(View.VISIBLE);
+                //   binding.addcloth.setVisibility(View.VISIBLE);
 
-                if (toi < 24){
+                if (toi < 24) {
                     binding.addcloth.setVisibility(View.VISIBLE);
                 }
                 /*
@@ -105,7 +107,7 @@ public class Admin2 extends AppCompatActivity {
         this.blanket = blanket;
                 */
 
-                StudentPRN SomeStudent = new StudentPRN(date,total,s,pant,shirt,bedSheet,towel,blanket,pillowcover);
+                StudentPRN SomeStudent = new StudentPRN(date, total, s, pant, shirt, bedSheet, towel, blanket, pillowcover);
 
             }
 
@@ -137,26 +139,26 @@ public class Admin2 extends AppCompatActivity {
                 int toi = shi + pi + ti + bi + bei + Integer.parseInt(pillowcover);
 
 
-
                 String total = String.valueOf(toi);
                 binding.total1.setText(total);
 
-                if (toi > 24){
+                if (toi > 24) {
                     binding.addcloth.setVisibility(View.INVISIBLE);
                 }
 
+                if (toi == 0) {
+                    Toast.makeText(AddLaundryActivity.this, "Add some clothes", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
-
-                StudentPRN SomeStudent = new StudentPRN(date,total,s,pant,shirt,bedSheet,towel,blanket,pillowcover);
+                StudentPRN SomeStudent = new StudentPRN(date, total, s, pant, shirt, bedSheet, towel, blanket, pillowcover);
                 database.getReference().child("LaundryInfo").child(SomeStudent.getStudentPRN()).child(SomeStudent.getDate()).setValue(SomeStudent);
                 db.getReference().child("day").child(SomeStudent.getDate()).child(SomeStudent.getStudentPRN()).setValue(SomeStudent);
 
 
-                Intent i = new Intent(Admin2.this, MainActivity.class);
+                Intent i = new Intent(AddLaundryActivity.this, LaundryStudentList.class);
                 startActivity(i);
                 finish();
-
-
 
 
             }
@@ -164,8 +166,9 @@ public class Admin2 extends AppCompatActivity {
 
 
     }
+
     @Override
-    public void onBackPressed(){
+    public void onBackPressed() {
         finish();
     }
 }

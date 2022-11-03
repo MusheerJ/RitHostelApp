@@ -57,7 +57,7 @@ public class LeaveAdapter extends RecyclerView.Adapter<LeaveAdapter.LeaveViewHol
 
     public static class LeaveViewHolder extends RecyclerView.ViewHolder {
 
-        SampleLeaveLayoutBinding binding;
+        private final SampleLeaveLayoutBinding binding;
 
         public LeaveViewHolder(@NonNull View itemView) {
             super(itemView);

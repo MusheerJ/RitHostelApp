@@ -167,7 +167,7 @@
             android:layout_gravity="bottom|center"
             android:layout_marginBottom="@dimen/_20sdp"
             android:fontFamily="@font/inter_medium"
-            android:text="MBA TEAM"
+            android:text="Other"
             android:textAlignment="center"
             android:textColor="@color/dark_pink"
             android:textSize="@dimen/_14ssp" />

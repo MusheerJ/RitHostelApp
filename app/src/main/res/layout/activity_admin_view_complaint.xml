@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_color"
-    tools:context=".Complaint.ViewComplaintActivity">
+    tools:context=".Admin.Complaint.AdminViewComplaintActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/assignTaskBar"
@@ -87,16 +87,6 @@
 
             </androidx.cardview.widget.CardView>
 
-
-            <!--            priority-->
-
-
-            <!--pick date-->
-
-            <!--Participants-->
-
-            <!--descripation-->
-
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
@@ -127,6 +117,16 @@
                     android:textSize="@dimen/_12ssp" />
 
             </androidx.cardview.widget.CardView>
+
+
+            <!--            priority-->
+
+
+            <!--pick date-->
+
+            <!--Participants-->
+
+            <!--descripation-->
 
             <TextView
                 android:id="@+id/textView1"
@@ -170,26 +170,27 @@
                 android:textColor="@color/title_text"
                 android:textSize="@dimen/_14ssp" />
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ComplaintCategory"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_5sdp"
-                app:cardCornerRadius="@dimen/_5sdp">
+                android:backgroundTint="@color/white"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/inter_medium">
 
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/viewComplaintStatus"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="top"
+                    android:background="@color/white"
                     android:backgroundTint="@color/white"
                     android:fontFamily="@font/inter_medium"
-                    android:hint="Enter Room no"
-                    android:inputType="text"
-                    android:padding="@dimen/_10sdp"
-                    android:textColor="@color/task_text"
-                    android:textSize="@dimen/_12ssp" />
+                    android:inputType="none"
+                    android:text="Pending"
+                    tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.textfield.TextInputLayout>
 
 
             <TextView
@@ -212,7 +213,7 @@
                 <EditText
                     android:id="@+id/viewComplaintDes"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_200sdp"
+                    android:layout_height="@dimen/_120sdp"
                     android:backgroundTint="@color/white"
                     android:fontFamily="@font/inter_medium"
                     android:gravity="top"
@@ -226,5 +227,30 @@
 
         </LinearLayout>
     </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/updateComplaintBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:background="@drawable/ic_approve_leave"
+        android:padding="@dimen/_5sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/inter_medium"
+            android:paddingBottom="@dimen/_5sdp"
+            android:text="Update Complaint"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14ssp" />
+
+    </RelativeLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

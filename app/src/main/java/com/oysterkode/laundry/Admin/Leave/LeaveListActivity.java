@@ -1,4 +1,4 @@
-package com.oysterkode.laundry.Admin;
+package com.oysterkode.laundry.Admin.Leave;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.oysterkode.laundry.Admin.Leave.AdminLeaveAdapter;
 import com.oysterkode.laundry.Leave.Leave;
 import com.oysterkode.laundry.Paths;
 import com.oysterkode.laundry.databinding.ActivityLeaveListBinding;

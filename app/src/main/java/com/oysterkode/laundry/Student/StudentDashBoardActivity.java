@@ -10,10 +10,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.oysterkode.laundry.Admin.AdminDashBoardActivity;
 import com.oysterkode.laundry.Complaint.ComplaintRegistrationActivity;
+import com.oysterkode.laundry.Complaint.ViewComplaintHistoryActivity;
 import com.oysterkode.laundry.Leave.ApplyLeaveActivity;
 import com.oysterkode.laundry.Leave.LeaveHistoryActivity;
 import com.oysterkode.laundry.R;
-import com.oysterkode.laundry.Utils.LaundryDetailsActivity;
+import com.oysterkode.laundry.Laundry.LaundryDetailsActivity;
 import com.oysterkode.laundry.Utils.LoginActivity;
 import com.oysterkode.laundry.databinding.ActivityStudentDashBoardBinding;
 
@@ -59,10 +60,19 @@ public class StudentDashBoardActivity extends AppCompatActivity {
                         return true;
                     }
 
+                    if (menuItem.getItemId() == R.id.complaintDetails) {
+
+                        Intent intent = new Intent(getApplicationContext(), ViewComplaintHistoryActivity.class);
+                        startActivity(intent);
+                        return true;
+
+                    }
+
                     if (menuItem.getItemId() == R.id.studentLogout) {
                         FirebaseAuth.getInstance().signOut();
                         startActivity(new Intent(StudentDashBoardActivity.this, LoginActivity.class));
                         finishAffinity();
+                        return true;
                     }
                     return false;
                 }

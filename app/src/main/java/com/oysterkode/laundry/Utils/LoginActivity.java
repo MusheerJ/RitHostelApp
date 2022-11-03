@@ -19,6 +19,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
+import com.oysterkode.laundry.Admin.AdminDashBoardActivity;
 import com.oysterkode.laundry.Paths;
 import com.oysterkode.laundry.R;
 import com.oysterkode.laundry.Student.Student;
@@ -121,13 +122,21 @@ public class LoginActivity extends AppCompatActivity {
                             database.getReference().child(Paths.STUDENT_INFO)
                                     .child(auth.getUid())
                                     .setValue(student);
+                            Intent i;
+                            if (binding.isAdmin.isChecked()) {
+                                i = new Intent(this, AdminDashBoardActivity.class);
 
+                            } else {
+                                i = new Intent(this, StudentDashBoardActivity.class);
+                            }
 
-                            Intent i = new Intent(LoginActivity.this, StudentDashBoardActivity.class);
                             i.putExtra("PRN", binding.password.getText().toString());
-                            startActivity(i);
                             binding.password.setText("");
                             binding.email.setText("");
+                            startActivity(i);
+                            finish();
+
+
                         } else {
                             Toast.makeText(LoginActivity.this
                                     , task.getException().getMessage(),

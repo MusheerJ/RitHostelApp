@@ -5,12 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_color"
-    tools:context=".Admin.AdminViewLeaveActivity">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"></LinearLayout>
+    tools:context=".Admin.Leave.AdminViewLeaveActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/assignTaskBar"
