@@ -2,5 +2,37 @@
     <string name="app_name">LAUNDRY</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="rit_hostel">RIT HOSTEL</string>>
+    <string name="rit_hostel">RIT HOSTEL</string>
+
+
+    <string name="laundry">Laundry</string>
+    <string name="complaint">Complaint</string>
+    <string name="leave">Leave</string>
+
+
+    <!--    Date Pick-->
+    <string name="start_date_msg">Feb 8, 2022</string>
+    <string name="due_date_msg">Feb 10, 2022</string>
+    <string name="assign">Task Priority</string>
+
+
+    <string name="student_name">Student Name</string>
+    <string name="student_prn">Student PRN</string>
+    <string name="duration">Duration</string>
+    <string name="reason">Reason</string>
+    <string name="destination">Destination</string>
+
+
+    <string name="student_class">Student Class</string>
+    <string name="student_branch">Student Branch</string>
+
+
+    <string name="enter_name">Enter Student Name</string>
+    <string name="enter_duration">Enter Duration</string>
+    <string name="enter_destination">Enter Destination</string>
+    <string name="enter_parent_contact">Enter Parent Contact</string>
+    <!--    <string name="enter_name">Enter Student Name</string>-->
+    <!--    <string name="enter_name">Enter Student Name</string>-->
+
+
 </resources>

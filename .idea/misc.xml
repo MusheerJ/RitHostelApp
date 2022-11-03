@@ -3,17 +3,33 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/drawable/ic_approve_leave.xml" value="0.216" />
+        <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/drawable/ic_assignbtn.xml" value="0.216" />
+        <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/drawable/ic_calender_end.xml" value="0.216" />
+        <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/drawable/ic_calender_start.xml" value="0.1" />
+        <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/drawable/ic_dot.xml" value="0.216" />
+        <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/drawable/ic_reject_leave.xml" value="0.216" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_aboutus.xml" value="0.2046875" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_add_p_r_n.xml" value="0.2046875" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_admin2.xml" value="0.2046875" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_admin3.xml" value="0.2046875" />
+        <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_admin_dash_board.xml" value="0.2046875" />
+        <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_admin_view_leave.xml" value="0.2" />
+        <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_apply_leave.xml" value="0.2046875" />
+        <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_leave_history.xml" value="0.2046875" />
+        <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_leave_list.xml" value="0.2046875" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_main.xml" value="0.2046875" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_main1.xml" value="0.2046875" />
+        <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_new_login.xml" value="0.1875" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_static.xml" value="0.2046875" />
+        <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_student_dash_board.xml" value="0.2046875" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_user1.xml" value="0.2046875" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_user2.xml" value="0.2046875" />
+        <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_view_leave.xml" value="0.2046875" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/container_page3.xml" value="0.2046875" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/main_activity_adapter.xml" value="0.2046875" />
+        <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/sample_leave_layout.xml" value="0.264" />
+        <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/menu/main_menu.xml" value="0.2046875" />
       </map>
     </option>
   </component>

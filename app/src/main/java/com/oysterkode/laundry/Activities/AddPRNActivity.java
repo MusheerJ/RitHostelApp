@@ -13,7 +13,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.oysterkode.laundry.MainActivity;
+import com.oysterkode.laundry.Utils.MainActivity;
 import com.oysterkode.laundry.databinding.ActivityAddPRNBinding;
 
 
@@ -49,7 +49,7 @@ public class AddPRNActivity extends AppCompatActivity {
                     if(binding.PRN.getText().toString().equals(binding.PassWord.getText().toString()))
                     {
                         Toast.makeText(AddPRNActivity.this,"Login Success",Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(AddPRNActivity.this, com.oysterkode.laundry.MainActivity.class);
+                        Intent intent = new Intent(AddPRNActivity.this, MainActivity.class);
                         UserExists = true;
                         startActivity(intent);
 

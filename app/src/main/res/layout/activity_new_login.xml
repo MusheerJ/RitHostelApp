@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-    tools:context=".Utils.LoginActivity"
+<androidx.constraintlayout.widget.ConstraintLayout
+    tools:context=".Utils.NewLoginActivity"
     android:background="#2C2B3F"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
@@ -83,9 +83,7 @@
                 android:layout_margin="3dp"
                 android:layout_weight="10"
                 android:importantForAutofill="yes"
-                android:inputType="textPersonName">
-
-            </com.google.android.material.textfield.TextInputEditText>
+                android:inputType="textPersonName"></com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout

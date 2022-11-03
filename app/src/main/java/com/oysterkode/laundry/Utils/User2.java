@@ -1,19 +1,15 @@
-package com.oysterkode.laundry;
+package com.oysterkode.laundry.Utils;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,11 +23,10 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.oysterkode.laundry.R;
 
 import java.io.File;
 import java.io.IOException;
-
-import pl.droidsonroids.gif.GifImageView;
 
 
 public class User2 extends AppCompatActivity {
@@ -76,7 +71,7 @@ public class User2 extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(User2.this, Admin3.class);
+                Intent i = new Intent(User2.this, LaundryDetailsActivity.class);
                 i.putExtra("PRN", s);
                 startActivity(i);
             }
@@ -151,7 +146,7 @@ public class User2 extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-        Intent i = new Intent(User2.this, User1.class );
+        Intent i = new Intent(User2.this, LoginActivity.class );
         startActivity(i);
         i.putExtra("xyz", 1);
         finish();

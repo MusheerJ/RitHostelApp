@@ -1,4 +1,4 @@
-package com.oysterkode.laundry;
+package com.oysterkode.laundry.Utils;
 
 import android.os.Bundle;
 

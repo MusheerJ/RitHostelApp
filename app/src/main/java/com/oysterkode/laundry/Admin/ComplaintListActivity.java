@@ -1,14 +1,17 @@
-package com.oysterkode.laundry;
+
+package com.oysterkode.laundry.Admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Aboutus extends AppCompatActivity {
+import com.oysterkode.laundry.R;
+
+public class ComplaintListActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_aboutus);
+        setContentView(R.layout.activity_complaint_list);
     }
 }

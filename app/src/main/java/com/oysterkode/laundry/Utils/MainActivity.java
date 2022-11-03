@@ -1,4 +1,4 @@
-package com.oysterkode.laundry;
+package com.oysterkode.laundry.Utils;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -19,6 +19,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.oysterkode.laundry.R;
 import com.oysterkode.laundry.databinding.ActivityMainBinding;
 
 
@@ -90,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void run() {
 
-                            Intent i = new Intent(MainActivity.this,Admin3.class);
+                            Intent i = new Intent(MainActivity.this, LaundryDetailsActivity.class);
                             i.putExtra("PRN",a);
                             startActivity(i);
   //                          finish();
@@ -130,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String a = Student.get(position);
-                Intent i = new Intent(MainActivity.this,Admin3.class);
+                Intent i = new Intent(MainActivity.this, LaundryDetailsActivity.class);
                 i.putExtra("PRN",a);
                 startActivity(i);
             }

@@ -1,4 +1,4 @@
-package com.oysterkode.laundry;
+package com.oysterkode.laundry.Utils;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.os.Handler;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+
+import com.oysterkode.laundry.R;
 
 public class MainActivity1 extends AppCompatActivity {
     private static int SPLASH_TIME_OUT = 2050;

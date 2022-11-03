@@ -1,10 +1,9 @@
-package com.oysterkode.laundry;
+package com.oysterkode.laundry.Utils;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DatabaseReference;
@@ -153,7 +152,7 @@ public class Admin2 extends AppCompatActivity {
                 db.getReference().child("day").child(SomeStudent.getDate()).child(SomeStudent.getStudentPRN()).setValue(SomeStudent);
 
 
-                Intent i = new Intent(com.oysterkode.laundry.Admin2.this,MainActivity.class);
+                Intent i = new Intent(Admin2.this, MainActivity.class);
                 startActivity(i);
                 finish();
 
