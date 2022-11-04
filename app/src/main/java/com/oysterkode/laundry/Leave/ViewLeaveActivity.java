@@ -1,6 +1,7 @@
 package com.oysterkode.laundry.Leave;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,6 +22,13 @@ public class ViewLeaveActivity extends AppCompatActivity {
 
 
         setLeave();
+
+        binding.backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
 
     }

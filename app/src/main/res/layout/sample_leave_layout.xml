@@ -43,6 +43,7 @@
             android:layout_width="@dimen/_80sdp"
             android:layout_height="wrap_content"
             android:layout_gravity="right|bottom"
+
             android:checkable="false"
             android:clickable="false"
             android:elevation="@dimen/_2sdp"
@@ -55,7 +56,7 @@
 
         <TextView
             android:id="@+id/leaveItemReason"
-            android:layout_width="@dimen/_180sdp"
+            android:layout_width="@dimen/_170sdp"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|left"
             android:ellipsize="end"

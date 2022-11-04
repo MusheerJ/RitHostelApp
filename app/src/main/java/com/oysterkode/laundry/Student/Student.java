@@ -19,7 +19,17 @@ public class Student {
    private String classAndBranch;
    private String contact;
    private String roomNo;
-   private String DOB;
+
+    public String getHostel() {
+        return hostel;
+    }
+
+    public void setHostel(String hostel) {
+        this.hostel = hostel;
+    }
+
+    private String DOB;
+   private String hostel;
    private Name name;
 
     public Student() {

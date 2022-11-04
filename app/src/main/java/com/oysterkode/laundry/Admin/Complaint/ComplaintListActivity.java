@@ -3,6 +3,7 @@ package com.oysterkode.laundry.Admin.Complaint;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -47,8 +48,6 @@ public class ComplaintListActivity extends AppCompatActivity {
         binding.adminComplaintRecycler.setAdapter(adapter);
 
         dialog.show();
-
-
         database.getReference()
                 .child(Paths.COMPLAINT_ADMIN)
                 .addValueEventListener(new ValueEventListener() {
@@ -69,6 +68,14 @@ public class ComplaintListActivity extends AppCompatActivity {
 
                     }
                 });
+
+
+        binding.backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
 
     }

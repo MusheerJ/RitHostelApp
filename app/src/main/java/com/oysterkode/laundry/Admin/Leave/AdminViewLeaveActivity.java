@@ -1,6 +1,8 @@
 package com.oysterkode.laundry.Admin.Leave;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.database.FirebaseDatabase;
 import com.oysterkode.laundry.Leave.Leave;
 import com.oysterkode.laundry.Paths;
+import com.oysterkode.laundry.R;
 import com.oysterkode.laundry.databinding.ActivityAdminViewLeaveBinding;
 
 public class AdminViewLeaveActivity extends AppCompatActivity {
@@ -15,6 +18,13 @@ public class AdminViewLeaveActivity extends AppCompatActivity {
     private ActivityAdminViewLeaveBinding binding;
     private Leave selectedLeave;
     private FirebaseDatabase database;
+    private String leaveStatus[] = {
+            Leave.Status.PENDING,
+            Leave.Status.APPROVED,
+            Leave.Status.REJECTED
+
+    };
+    private ArrayAdapter statusAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +39,12 @@ public class AdminViewLeaveActivity extends AppCompatActivity {
         selectedLeave = (Leave) getIntent().getSerializableExtra("selected_leave");
         setLeave();
 
+        statusAdapter = new ArrayAdapter(getApplicationContext(), R.layout.home_list_item, leaveStatus);
+        binding.viewLeaveStatus.setAdapter(statusAdapter);
+
 
         binding.approveLeave.setOnClickListener(view -> {
-            selectedLeave.setStatus(Leave.Status.APPROVED);
+            selectedLeave.setStatus(binding.viewLeaveStatus.getText().toString());
 
             database.getReference()
                     .child(Paths.LEAVE_ADMIN)
@@ -45,21 +58,13 @@ public class AdminViewLeaveActivity extends AppCompatActivity {
                             .addOnSuccessListener(unused12 -> Toast.makeText(AdminViewLeaveActivity.this, "Leave Status Updated", Toast.LENGTH_SHORT).show()));
         });
 
-
-        binding.rejectLeave.setOnClickListener(view -> {
-            selectedLeave.setStatus(Leave.Status.REJECTED);
-
-            database.getReference()
-                    .child(Paths.LEAVE_ADMIN)
-                    .child(selectedLeave.getLeaveId())
-                    .setValue(selectedLeave)
-                    .addOnSuccessListener(unused -> database.getReference()
-                            .child(Paths.LEAVE_STUDENTS)
-                            .child(selectedLeave.getStudentId())
-                            .child(selectedLeave.getLeaveId())
-                            .setValue(selectedLeave)
-                            .addOnSuccessListener(unused1 -> Toast.makeText(AdminViewLeaveActivity.this, "Leave Status Updated", Toast.LENGTH_SHORT).show()));
+        binding.backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
         });
+
 
     }
 
@@ -73,8 +78,7 @@ public class AdminViewLeaveActivity extends AppCompatActivity {
         binding.leaveStudentName.setText(selectedLeave.getStudentName());
         binding.leaveStudentName.setEnabled(false);
 
-        binding.leaveCurrentStatus.setText(selectedLeave.getStatus());
-        binding.leaveCurrentStatus.setEnabled(false);
+        binding.viewLeaveStatus.setText(selectedLeave.getStatus());
 
 
         binding.startDate.setText(selectedLeave.getFrom());

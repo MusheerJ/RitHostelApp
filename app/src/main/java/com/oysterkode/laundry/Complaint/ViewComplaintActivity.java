@@ -1,6 +1,7 @@
 package com.oysterkode.laundry.Complaint;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,6 +23,14 @@ public class ViewComplaintActivity extends AppCompatActivity {
 
         selectedComplaint = (Complaint) getIntent().getSerializableExtra("selected_complaint");
         setComplaint();
+
+
+        binding.backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 

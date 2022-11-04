@@ -3,6 +3,7 @@ package com.oysterkode.laundry.Complaint;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -71,6 +72,14 @@ public class ViewComplaintHistoryActivity extends AppCompatActivity {
 
                     }
                 });
+
+
+        binding.backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
 
     }

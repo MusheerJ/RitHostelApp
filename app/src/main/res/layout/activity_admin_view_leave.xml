@@ -55,6 +55,11 @@
             android:paddingHorizontal="@dimen/_15sdp">
 
             <!--task title-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"></LinearLayout>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -101,38 +106,6 @@
 
                 <EditText
                     android:id="@+id/leaveStudentName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="top"
-                    android:backgroundTint="@color/white"
-                    android:fontFamily="@font/inter_medium"
-                    android:hint="@string/enter_name"
-                    android:inputType="text"
-                    android:padding="@dimen/_10sdp"
-                    android:textColor="@color/task_text"
-                    android:textSize="@dimen/_12ssp" />
-
-            </androidx.cardview.widget.CardView>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:fontFamily="@font/inter_medium"
-                android:text="Leave Status"
-
-                android:textColor="@color/title_text"
-                android:textSize="@dimen/_14ssp" />
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_5sdp"
-                app:cardCornerRadius="@dimen/_5sdp">
-
-                <EditText
-                    android:id="@+id/leaveCurrentStatus"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="top"
@@ -232,6 +205,39 @@
 
 
             </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/inter_medium"
+                android:text="Leave Status"
+
+                android:textColor="@color/title_text"
+                android:textSize="@dimen/_14ssp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ComplaintCategory"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/inter_medium">
+
+                <AutoCompleteTextView
+                    android:id="@+id/viewLeaveStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/inter_medium"
+                    android:inputType="none"
+                    android:text="Pending"
+                    tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
                 android:id="@+id/textView"
@@ -350,7 +356,8 @@
                 <EditText
                     android:id="@+id/leaveReason"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_100sdp"
+                    android:layout_height="@dimen/_150sdp"
+                    android:layout_marginBottom="@dimen/_40sdp"
                     android:backgroundTint="@color/white"
                     android:fontFamily="@font/inter_medium"
                     android:gravity="top"
@@ -362,45 +369,26 @@
             </androidx.cardview.widget.CardView>
 
 
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_120sdp">
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
         </LinearLayout>
     </ScrollView>
 
     <RelativeLayout
-        android:id="@+id/rejectLeave"
-        android:layout_width="@dimen/_120sdp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/ic_reject_leave"
-        android:padding="@dimen/_5sdp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.149"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:fontFamily="@font/inter_medium"
-            android:paddingBottom="@dimen/_5sdp"
-            android:text="Reject"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_14ssp" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
         android:id="@+id/approveLeave"
-        android:layout_width="@dimen/_120sdp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="@dimen/_20sdp"
         android:background="@drawable/ic_approve_leave"
         android:padding="@dimen/_5sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.839"
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
@@ -409,7 +397,7 @@
             android:layout_centerInParent="true"
             android:fontFamily="@font/inter_medium"
             android:paddingBottom="@dimen/_5sdp"
-            android:text="Approve"
+            android:text="Update Leave"
             android:textColor="@color/white"
             android:textSize="@dimen/_14ssp" />
 

@@ -175,8 +175,8 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/white"
                 android:layout_marginTop="@dimen/_10sdp"
+                android:backgroundTint="@color/white"
                 android:fontFamily="@font/inter_medium">
 
                 <AutoCompleteTextView
@@ -213,7 +213,7 @@
                 <EditText
                     android:id="@+id/viewComplaintDes"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_120sdp"
+                    android:layout_height="@dimen/_150sdp"
                     android:backgroundTint="@color/white"
                     android:fontFamily="@font/inter_medium"
                     android:gravity="top"
@@ -223,6 +223,12 @@
                     android:textSize="@dimen/_12ssp" />
 
             </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_120sdp">
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
 
         </LinearLayout>

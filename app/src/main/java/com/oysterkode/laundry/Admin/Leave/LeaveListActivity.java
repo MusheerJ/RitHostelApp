@@ -2,6 +2,7 @@ package com.oysterkode.laundry.Admin.Leave;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,7 +12,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.oysterkode.laundry.Admin.Leave.AdminLeaveAdapter;
 import com.oysterkode.laundry.Leave.Leave;
 import com.oysterkode.laundry.Paths;
 import com.oysterkode.laundry.databinding.ActivityLeaveListBinding;
@@ -75,6 +75,13 @@ public class LeaveListActivity extends AppCompatActivity {
 
                     }
                 });
+
+        binding.backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
 
     }

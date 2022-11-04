@@ -18,7 +18,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.oysterkode.laundry.Admin.AdminDashBoardActivity;
 import com.oysterkode.laundry.Paths;
 import com.oysterkode.laundry.R;
@@ -107,8 +110,8 @@ public class LoginActivity extends AppCompatActivity {
                             //Init Student
                             Student student = new Student();
                             student.setUserId(auth.getUid());
+                            student.setEmail(email);
                             student.setStudentId(email.split("@")[0]);
-                            student.setStudentName("NO SET");
 
                             SharedPreferences sharedPreferences = getSharedPreferences("CurrUser", MODE_PRIVATE);
 
@@ -119,9 +122,27 @@ public class LoginActivity extends AppCompatActivity {
                             myEdit.putString("currUserId", student.getUserId());
                             myEdit.commit();
 
-                            database.getReference().child(Paths.STUDENT_INFO)
+
+                            database.getReference()
+                                    .child(Paths.STUDENT_INFO)
                                     .child(auth.getUid())
-                                    .setValue(student);
+                                    .addValueEventListener(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                            if (!snapshot.exists()) {
+                                                database.getReference().child(Paths.STUDENT_INFO)
+                                                        .child(auth.getUid())
+                                                        .setValue(student);
+                                            }
+                                        }
+
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError error) {
+
+                                        }
+                                    });
+
+
                             Intent i;
                             if (binding.isAdmin.isChecked()) {
                                 i = new Intent(this, AdminDashBoardActivity.class);
@@ -178,6 +199,11 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
+
+
+//    boolean userExits() {
+//
+//    }
 
     @Override
     public void onBackPressed() {

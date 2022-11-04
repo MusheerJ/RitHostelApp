@@ -11,6 +11,9 @@
         android:theme="@style/Theme.Laundry"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Student.StudentProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".Admin.Complaint.AdminViewComplaintActivity"
             android:exported="false" />
         <activity
@@ -18,11 +21,11 @@
             android:exported="false" />
         <activity
             android:name=".Utils.NewLoginActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Admin.AddStudentActivity"
             android:exported="false" />
-        <activity android:name=".Student.StudentDashBoardActivity"></activity>
+        <activity android:name=".Student.StudentDashBoardActivity" />
         <activity
             android:name=".Admin.Complaint.ComplaintListActivity"
             android:exported="false" />
@@ -82,7 +85,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Admin.LaundryStudentList"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Utils.MainActivity1"
             android:screenOrientation="portrait" />

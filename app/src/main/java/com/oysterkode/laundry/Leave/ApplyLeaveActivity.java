@@ -3,6 +3,7 @@ package com.oysterkode.laundry.Leave;
 import android.app.ProgressDialog;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -134,6 +135,13 @@ public class ApplyLeaveActivity extends AppCompatActivity {
                             }));
 
 
+        });
+
+        binding.backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
         });
 
 

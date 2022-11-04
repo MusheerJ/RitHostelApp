@@ -2,6 +2,7 @@ package com.oysterkode.laundry.Admin.Complaint;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
@@ -60,6 +61,13 @@ public class AdminViewComplaintActivity extends AppCompatActivity {
                                 });
                     });
 
+        });
+
+        binding.backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
         });
     }
 
