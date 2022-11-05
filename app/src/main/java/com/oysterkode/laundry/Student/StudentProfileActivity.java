@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
@@ -28,6 +29,9 @@ public class StudentProfileActivity extends AppCompatActivity {
     private FirebaseDatabase database;
     private Student currentStudent;
     private ProgressDialog dialog;
+    private ArrayAdapter branchAdapter;
+    private ArrayAdapter hostelAdapter;
+    private ArrayAdapter yearAdapter;
 
 
     @Override
@@ -36,8 +40,11 @@ public class StudentProfileActivity extends AppCompatActivity {
         binding = ActivityStudentProfileBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         getSupportActionBar().hide();
+
+
         auth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
+
 
         dialog = new ProgressDialog(this);
 
@@ -107,8 +114,13 @@ public class StudentProfileActivity extends AppCompatActivity {
                 binding.profileStudentRoom.setError("Required !!");
                 return;
             }
-            if (binding.profileStudentClassAndBranch.getText().toString().isEmpty()) {
-                binding.profileStudentClassAndBranch.setError("Required !!");
+            if (binding.profileStudentYear.getText().toString().isEmpty()) {
+                binding.profileStudentYear.setError("Required !!");
+                return;
+            }
+
+            if (binding.profileStudentBranch.getText().toString().isEmpty()) {
+                binding.profileStudentBranch.setError("Required !!");
                 return;
             }
             if (binding.profileStudentContact.getText().toString().isEmpty()) {
@@ -119,7 +131,8 @@ public class StudentProfileActivity extends AppCompatActivity {
             currentStudent.setStudentName(binding.profileStudentName.getText().toString());
             currentStudent.setHostel(binding.profileStudentHostel.getText().toString());
             currentStudent.setRoomNo(binding.profileStudentRoom.getText().toString());
-            currentStudent.setClassAndBranch(binding.profileStudentClassAndBranch.getText().toString());
+            currentStudent.setStudentClass(binding.profileStudentYear.getText().toString());
+            currentStudent.setStudentBranch(binding.profileStudentBranch.getText().toString());
             currentStudent.setContact(binding.profileStudentContact.getText().toString());
 
 
@@ -130,11 +143,6 @@ public class StudentProfileActivity extends AppCompatActivity {
                     .addOnSuccessListener(unused -> {
                         Toast.makeText(this, "Profile Updated", Toast.LENGTH_SHORT).show();
                         binding.profileUpdateBtn.setVisibility(View.GONE);
-                        binding.profileStudentName.setEnabled(false);
-                        binding.profileStudentHostel.setEnabled(false);
-                        binding.profileStudentRoom.setEnabled(false);
-                        binding.profileStudentClassAndBranch.setEnabled(false);
-                        binding.profileStudentContact.setEnabled(false);
 
 
                     });
@@ -143,12 +151,39 @@ public class StudentProfileActivity extends AppCompatActivity {
         });
 
 
+        //BRANCH ADAPTER
+        branchAdapter = new ArrayAdapter(getApplicationContext(), R.layout.home_list_item, Student.branches);
+        binding.profileStudentBranch.setAdapter(branchAdapter);
+
+
+        //Hostel ADAPTER
+        hostelAdapter = new ArrayAdapter(getApplicationContext(), R.layout.home_list_item, Student.Hostel.hostels);
+        binding.profileStudentHostel.setAdapter(hostelAdapter);
+
+        //YEAR ADAPTER
+        yearAdapter = new ArrayAdapter(getApplicationContext(), R.layout.home_list_item, Student.year);
+        binding.profileStudentYear.setAdapter(yearAdapter);
+
+
+    }
+
+    private void setAdapter() {
+        branchAdapter = new ArrayAdapter(getApplicationContext(), R.layout.home_list_item, Student.branches);
+        binding.profileStudentBranch.setAdapter(branchAdapter);
+
+
+        //Hostel ADAPTER
+        hostelAdapter = new ArrayAdapter(getApplicationContext(), R.layout.home_list_item, Student.Hostel.hostels);
+        binding.profileStudentHostel.setAdapter(hostelAdapter);
+
+        //YEAR ADAPTER
+        yearAdapter = new ArrayAdapter(getApplicationContext(), R.layout.home_list_item, Student.year);
+        binding.profileStudentYear.setAdapter(yearAdapter);
     }
 
     private void updateStudentProfile() {
 
         String noSet = "NOT SET";
-
         binding.profileUpdateBtn.setVisibility(View.VISIBLE);
 
         if (binding.profileStudentName.getText().toString().equals(noSet)) {
@@ -157,6 +192,7 @@ public class StudentProfileActivity extends AppCompatActivity {
         }
 
         if (binding.profileStudentHostel.getText().toString().equals(noSet)) {
+            binding.profileStudentHostel.setHint("Select Year");
             binding.profileStudentHostel.setText(null);
             binding.profileStudentHostel.setEnabled(true);
         }
@@ -166,9 +202,16 @@ public class StudentProfileActivity extends AppCompatActivity {
             binding.profileStudentRoom.setEnabled(true);
         }
 
-        if (binding.profileStudentClassAndBranch.getText().toString().equals(noSet)) {
-            binding.profileStudentClassAndBranch.setText(null);
-            binding.profileStudentClassAndBranch.setEnabled(true);
+        if (binding.profileStudentYear.getText().toString().equals(noSet)) {
+            binding.profileStudentYear.setHint("Select Year");
+            binding.profileStudentYear.setText(null);
+            binding.profileStudentYear.setEnabled(true);
+        }
+
+        if (binding.profileStudentBranch.getText().toString().equals(noSet)) {
+            binding.profileStudentBranch.setHint("Select Year");
+            binding.profileStudentBranch.setText(null);
+            binding.profileStudentBranch.setEnabled(true);
         }
 
         if (binding.profileStudentContact.getText().toString().equals(noSet)) {
@@ -177,25 +220,23 @@ public class StudentProfileActivity extends AppCompatActivity {
 
 
         binding.profileStudentContact.setEnabled(true);
-
-
+        binding.profileStudentRoom.setEnabled(true);
     }
 
     private void setStudentInfo() {
+
+        //set Student PRN
         binding.profileStudentPRN.setText(currentStudent.getStudentId());
-        binding.profileStudentPRN.setEnabled(false);
 
 
-        //0
+        //set student name
         if (currentStudent.getStudentName() == null) {
             binding.profileStudentName.setText("NOT SET");
         } else {
-
             binding.profileStudentName.setText(currentStudent.getStudentName());
-            binding.profileStudentName.setEnabled(false);
         }
 
-        //1
+        //set student hostel
         if (currentStudent.getHostel() == null) {
             binding.profileStudentHostel.setText("NOT SET");
 
@@ -203,7 +244,7 @@ public class StudentProfileActivity extends AppCompatActivity {
             binding.profileStudentHostel.setText(currentStudent.getHostel());
         }
 
-        //2
+        //set student room
         if (currentStudent.getRoomNo() == null) {
             binding.profileStudentRoom.setText("NOT SET");
 
@@ -212,27 +253,38 @@ public class StudentProfileActivity extends AppCompatActivity {
         }
 
 
-        //3
-        if (currentStudent.getClassAndBranch() == null) {
-            binding.profileStudentClassAndBranch.setText("NOT SET");
+        //set student class
+        if (currentStudent.getStudentClass() == null) {
+            binding.profileStudentYear.setText("NOT SET");
         } else {
-            binding.profileStudentClassAndBranch.setText(currentStudent.getClassAndBranch());
+            binding.profileStudentYear.setText(currentStudent.getStudentClass());
         }
 
-        //4
+        //set student contact
         if (currentStudent.getContact() == null) {
             binding.profileStudentContact.setText("NOT SET");
         } else {
             binding.profileStudentContact.setText(currentStudent.getContact());
         }
 
+        //set student branch
+        if (currentStudent.getStudentBranch() == null) {
+            binding.profileStudentBranch.setText("NOT SET");
+        } else {
+            binding.profileStudentBranch.setText(currentStudent.getStudentBranch());
+        }
+
+        disableTheEditText();
+    }
+
+    private void disableTheEditText() {
+        binding.profileStudentPRN.setEnabled(false);
         binding.profileStudentName.setEnabled(false);
-        binding.profileStudentContact.setEnabled(false);
-        binding.profileStudentClassAndBranch.setEnabled(false);
-        binding.profileStudentRoom.setEnabled(false);
         binding.profileStudentHostel.setEnabled(false);
-
-
+        binding.profileStudentRoom.setEnabled(false);
+        binding.profileStudentYear.setEnabled(false);
+        binding.profileStudentBranch.setEnabled(false);
+        binding.profileStudentContact.setEnabled(false);
     }
 
     private void sendPassWordResetLink(String email) {

@@ -2,10 +2,10 @@ package com.oysterkode.laundry.Student;
 
 public class StudentBranch {
 
-    final static String CSIT = "CSIT";
-    final static String CSE = "CSE";
-    final static String EE = "EE";
-    final static String ENTC = "ENTC";
-    final static String ME = "ME";
-    final static String AE = "AE";
+    public final static String CSIT = "CSIT";
+    public final static String CSE = "CSE";
+    public final static String EE = "EE";
+    public final static String ENTC = "ENTC";
+    public final static String ME = "ME";
+    public final static String AE = "AE";
 }

@@ -10,6 +10,7 @@
     <color name="pink">#FFC0CB</color>
     <color name="red">#FF0000</color>
 
+    <color name="light_green_A700">#64DD17</color>
 
     <!--    JADU COLOR-->
     <color name="low_green">#C3EFDF</color>
@@ -45,6 +46,10 @@
     <color name="task_text">#5b5d6b</color>
 
     <color name="transparent">#00FF0000</color>
+
+
+    <color name="green_new">#11D853</color>
+    <color name="red_new">#FB0000</color>
 
 
 </resources>

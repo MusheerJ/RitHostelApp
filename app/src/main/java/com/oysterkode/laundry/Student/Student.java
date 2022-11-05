@@ -8,17 +8,52 @@ public class Student {
         String lastName;
     }
 
+    final public static String[] year = {
+            StudentClass.FY,
+            StudentClass.SY,
+            StudentClass.TY,
+            StudentClass.FinalY,
+    };
 
-   private String userId;
-   private String studentId;
-   private String studentName;
-   private String studentClass;
-   private String studentBranch;
-   private String email;
-   private String password;
-   private String classAndBranch;
-   private String contact;
-   private String roomNo;
+    final public static String branches[] = {
+            StudentBranch.CSE,
+            StudentBranch.CSIT,
+            StudentBranch.EE,
+            StudentBranch.ENTC,
+            StudentBranch.AE,
+            StudentBranch.ME,
+    };
+
+
+    public static class Hostel {
+        final public static String A_HOSTEL = "A";
+        final public static String B_HOSTEL = "B";
+        final public static String C_HOSTEL = "C";
+        final public static String D_HOSTEL = "D";
+        final public static String E_HOSTEL = "E";
+        final public static String F_HOSTEL = "F";
+        public static String[] hostels = {
+                A_HOSTEL,
+                B_HOSTEL,
+                C_HOSTEL,
+                D_HOSTEL,
+                E_HOSTEL,
+                F_HOSTEL
+
+        };
+    }
+
+
+    private String userId;
+    private String studentId;
+    private String studentName;
+    private String studentClass;
+    private String studentBranch;
+    private String email;
+    private String password;
+    private String classAndBranch;
+    private String contact;
+    private String roomNo;
 
     public String getHostel() {
         return hostel;
@@ -29,8 +64,8 @@ public class Student {
     }
 
     private String DOB;
-   private String hostel;
-   private Name name;
+    private String hostel;
+    private Name name;
 
     public Student() {
     }

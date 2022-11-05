@@ -30,9 +30,9 @@ import com.oysterkode.laundry.Student.StudentDashBoardActivity;
 import com.oysterkode.laundry.databinding.ActivityUser1Binding;
 
 public class LoginActivity extends AppCompatActivity {
-    ActivityUser1Binding binding;
+    private ActivityUser1Binding binding;
     private FirebaseAuth auth;
-    Animation topanimation;
+    private Animation topanimation;
     private FirebaseDatabase database;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)

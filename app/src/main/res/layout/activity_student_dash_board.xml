@@ -67,9 +67,11 @@
         app:cardCornerRadius="@dimen/_20sdp">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center" />
+            android:layout_width="@dimen/_55sdp"
+            android:layout_height="@dimen/_55sdp"
+
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/laundry_icon" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -97,9 +99,10 @@
         app:cardCornerRadius="@dimen/_20sdp">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center" />
+            android:layout_width="@dimen/_55sdp"
+            android:layout_height="@dimen/_55sdp"
+            android:layout_gravity="center"
+            android:src="@drawable/leave_icon" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -127,8 +130,9 @@
         app:cardCornerRadius="@dimen/_20sdp">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:src="@drawable/complaint_icon"
             android:layout_gravity="center" />
 
         <TextView
@@ -144,7 +148,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/teamMBA"
+        android:id="@+id/studentAttendance"
         android:layout_width="@dimen/_150sdp"
         android:layout_height="@dimen/_165sdp"
         android:layout_below="@+id/centerinparent"
@@ -157,8 +161,9 @@
         app:cardCornerRadius="@dimen/_20sdp">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:src="@drawable/attendance_icon"
             android:layout_gravity="center" />
 
         <TextView
@@ -167,7 +172,7 @@
             android:layout_gravity="bottom|center"
             android:layout_marginBottom="@dimen/_20sdp"
             android:fontFamily="@font/inter_medium"
-            android:text="Other"
+            android:text="Attendance"
             android:textAlignment="center"
             android:textColor="@color/dark_pink"
             android:textSize="@dimen/_14ssp" />

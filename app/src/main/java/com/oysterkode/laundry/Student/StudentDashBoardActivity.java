@@ -2,13 +2,14 @@ package com.oysterkode.laundry.Student;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
+import android.util.Log;
 import android.widget.PopupMenu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.oysterkode.laundry.Admin.AdminDashBoardActivity;
+import com.oysterkode.laundry.Attendance.StudentViewAttendanceActivity;
 import com.oysterkode.laundry.Complaint.ComplaintRegistrationActivity;
 import com.oysterkode.laundry.Complaint.ViewComplaintHistoryActivity;
 import com.oysterkode.laundry.Laundry.LaundryDetailsActivity;
@@ -43,7 +44,17 @@ public class StudentDashBoardActivity extends AppCompatActivity {
             startActivity(new Intent(this, ComplaintRegistrationActivity.class));
         });
 
-        binding.teamMBA.setOnClickListener(view -> {
+        binding.studentAttendance.setOnClickListener(view -> {
+            try {
+                startActivity(new Intent(this, StudentViewAttendanceActivity.class));
+
+            } catch (Exception e) {
+                Log.d("TAG", "onCreate: " + e.getMessage());
+            }
+
+        });
+
+        binding.dashBoardHead.setOnClickListener(v -> {
             startActivity(new Intent(this, AdminDashBoardActivity.class));
         });
 

@@ -11,6 +11,24 @@
         android:theme="@style/Theme.Laundry"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Attendance.StudentViewAttendanceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.Attendace.ViewAttendanceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.Attendace.AttendanceParameterSelectionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Student.UpdateStudentProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.Attendace.AttendanceStudentListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.Attendace.MarkAttendaceActivity"
+            android:exported="false" />
+        <activity
             android:name=".Student.StudentProfileActivity"
             android:exported="false" />
         <activity
