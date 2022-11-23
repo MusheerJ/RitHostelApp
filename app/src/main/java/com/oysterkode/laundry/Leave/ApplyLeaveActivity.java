@@ -92,12 +92,19 @@ public class ApplyLeaveActivity extends AppCompatActivity {
             if (binding.leaveParentContact.getText().toString().isEmpty()) {
                 binding.leaveParentContact.setError("required !!");
                 return;
+            } else {
+                String parentContact = binding.leaveParentContact.getText().toString();
+                if (parentContact.length() != 10) {
+                    binding.leaveParentContact.setError("enter a valid number");
+                    return;
+                }
             }
 
             if (binding.leaveReason.getText().toString().isEmpty()) {
                 binding.leaveReason.setError("required !!");
                 return;
             }
+
 
             dialog.show();
             leave = new Leave();

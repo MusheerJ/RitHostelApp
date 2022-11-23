@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.database.FirebaseDatabase;
 import com.oysterkode.laundry.Paths;
 import com.oysterkode.laundry.R;
+import com.oysterkode.laundry.Student.Student;
 import com.oysterkode.laundry.databinding.ActivityComplaintRegistrationBinding;
 
 public class ComplaintRegistrationActivity extends AppCompatActivity {
@@ -21,7 +22,8 @@ public class ComplaintRegistrationActivity extends AppCompatActivity {
     private ActivityComplaintRegistrationBinding binding;
     private final String complaintCategories[] = {Complaint.Category.ELECTRICITY,
             Complaint.Category.WATER,
-            Complaint.Category.WI_FI};
+            Complaint.Category.WI_FI,
+            Complaint.Category.OTHER};
     private ArrayAdapter complaintCategoryAdapter;
     private FirebaseDatabase database;
 
@@ -42,13 +44,17 @@ public class ComplaintRegistrationActivity extends AppCompatActivity {
         dialog = new ProgressDialog(this);
 
         dialog.setMessage("Registering complaint");
+        ArrayAdapter hostelAdapter = new ArrayAdapter(getApplicationContext(), R.layout.home_list_item, Student.Hostel.hostels);
+
+        binding.complaintHostelSelector.setHint("Select hostel");
+        binding.complaintHostelSelector.setAdapter(hostelAdapter);
 
 
         binding.registerComplaintBtn.setOnClickListener(view -> {
             Complaint complaint = new Complaint();
-
-            if (binding.complaintHostelName.getText().toString().isEmpty()) {
-                binding.complaintHostelName.setError("Required !!");
+            String hostel = binding.complaintHostelSelector.getText().toString();
+            if (hostel.isEmpty()) {
+                binding.complaintHostelSelector.setError("Required !!");
                 return;
             }
             if (binding.complaintRoomNo.getText().toString().isEmpty()) {
@@ -70,7 +76,7 @@ public class ComplaintRegistrationActivity extends AppCompatActivity {
 
 
             complaint.setComplaintId(Complaint.generateComplaintId());
-            complaint.setHostel(binding.complaintHostelName.getText().toString());
+            complaint.setHostel(hostel);
             complaint.setHostelRoomNumber(binding.complaintRoomNo.getText().toString());
             complaint.setCategory(binding.complaintCategory.getText().toString());
             complaint.setDesc(binding.complaintDes.getText().toString());
@@ -112,7 +118,7 @@ public class ComplaintRegistrationActivity extends AppCompatActivity {
     }
 
     private void resetValues() {
-        binding.complaintHostelName.setText(null);
+        binding.complaintHostelSelector.setText("Select Hostel");
         binding.complaintRoomNo.setText(null);
         binding.complaintCategory.setText("Select Category");
         binding.complaintDes.setText(null);

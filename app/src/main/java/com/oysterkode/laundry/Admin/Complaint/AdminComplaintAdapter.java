@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class AdminComplaintAdapter extends RecyclerView.Adapter<AdminComplaintAdapter.AdminComplaintViewHolder> {
     private final Context context;
-    private final ArrayList<Complaint> complaints;
+    private ArrayList<Complaint> complaints;
 
     public AdminComplaintAdapter(Context context, ArrayList<Complaint> complaints) {
         this.context = context;
@@ -58,6 +58,10 @@ public class AdminComplaintAdapter extends RecyclerView.Adapter<AdminComplaintAd
         return complaints.size();
     }
 
+    public void filterList(ArrayList<Complaint> filteredList) {
+        complaints = filteredList;
+        notifyDataSetChanged();
+    }
 
     public static class AdminComplaintViewHolder extends RecyclerView.ViewHolder {
 

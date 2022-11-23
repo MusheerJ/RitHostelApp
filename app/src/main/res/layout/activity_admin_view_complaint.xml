@@ -62,7 +62,69 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/inter_medium"
+                android:text="Student PRN"
+                android:textColor="@color/title_text"
+                android:textSize="@dimen/_14ssp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_5sdp">
+
+                <EditText
+                    android:id="@+id/viewComplaintPRN"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/inter_medium"
+                    android:hint="Enter Hostel"
+                    android:inputType="text"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/task_text"
+                    android:textSize="@dimen/_12ssp" />
+
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_medium"
+                android:text="Complaint Date"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/title_text"
+                android:textSize="@dimen/_14ssp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_5sdp">
+
+                <EditText
+                    android:id="@+id/viewComplaintDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/inter_medium"
+                    android:hint="Enter Hostel"
+                    android:inputType="text"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/task_text"
+                    android:textSize="@dimen/_12ssp" />
+
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_medium"
                 android:text="Hostel"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:textColor="@color/title_text"
                 android:textSize="@dimen/_14ssp" />
 

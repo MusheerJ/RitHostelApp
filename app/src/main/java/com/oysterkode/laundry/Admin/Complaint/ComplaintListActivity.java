@@ -3,7 +3,10 @@ package com.oysterkode.laundry.Admin.Complaint;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -78,5 +81,63 @@ public class ComplaintListActivity extends AppCompatActivity {
         });
 
 
+        binding.searchComplaint.setOnQueryTextFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+
+                    binding.titleText.setVisibility(View.INVISIBLE);
+                    binding.searchComplaint.getLayoutParams().width = ViewGroup.LayoutParams.MATCH_PARENT;
+
+                    binding.backButton.setVisibility(View.GONE);
+                } else {
+                    binding.titleText.setVisibility(View.VISIBLE);
+                    binding.searchComplaint.getLayoutParams().width = ViewGroup.LayoutParams.WRAP_CONTENT;
+                    binding.backButton.setVisibility(View.VISIBLE);
+                }
+
+            }
+        });
+
+        binding.searchComplaint.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                filter(newText.toLowerCase());
+                return false;
+            }
+        });
+
     }
+
+    private void filter(String keyword) {
+        ArrayList<Complaint> filteredList = new ArrayList<>();
+        if (keyword.isEmpty()) {
+            filteredList.addAll(complaints);
+
+        } else {
+            for (Complaint complaint : complaints) {
+                String date = complaint.getDate().toLowerCase();
+                String prn = complaint.getStudentId().toLowerCase();
+                String hostel = complaint.getHostel().toLowerCase();
+                String desc = complaint.getDesc().toLowerCase();
+                String category = complaint.getCategory().toLowerCase();
+                String room = complaint.getHostelRoomNumber();
+                Log.d("TAG", "filter: " + hostel);
+                if (date.contains(keyword) || prn.contains(keyword) || hostel.contains(keyword) || desc.contains(keyword) || category.contains(keyword)
+                        || room.contains(keyword)) {
+                    filteredList.add(complaint);
+                }
+
+            }
+        }
+        adapter.filterList(filteredList);
+    }
+
+
 }

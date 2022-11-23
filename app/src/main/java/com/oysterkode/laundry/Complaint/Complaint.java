@@ -14,6 +14,7 @@ public class Complaint implements Serializable {
         final public static String WI_FI = "WI-FI";
         final public static String ELECTRICITY = "Electricity";
         final public  static String WATER = "Water";
+        final public static String OTHER = "Other";
     }
 
     public static class Status {

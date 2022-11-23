@@ -14,8 +14,7 @@
         android:layout_height="@dimen/_50sdp"
         app:cardBackgroundColor="@color/bg_color"
         app:cardElevation="0.1dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
             android:id="@+id/back_button"
@@ -39,7 +38,7 @@
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/assignTaskBar">
@@ -195,7 +194,7 @@
                     android:backgroundTint="@color/white"
                     android:fontFamily="@font/inter_medium"
                     android:hint="@string/enter_duration"
-                    android:inputType="text"
+                    android:inputType="phone"
                     android:padding="@dimen/_10sdp"
                     android:textColor="@color/task_text"
                     android:textSize="@dimen/_12ssp" />
@@ -259,7 +258,7 @@
                     android:backgroundTint="@color/white"
                     android:fontFamily="@font/inter_medium"
                     android:hint="@string/enter_parent_contact"
-                    android:inputType="text"
+                    android:inputType="phone"
                     android:padding="@dimen/_10sdp"
                     android:textColor="@color/task_text"
                     android:textSize="@dimen/_12ssp" />
@@ -299,7 +298,11 @@
 
             </androidx.cardview.widget.CardView>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_200sdp">
 
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

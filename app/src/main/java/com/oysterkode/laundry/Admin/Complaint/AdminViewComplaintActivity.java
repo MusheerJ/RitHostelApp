@@ -72,6 +72,12 @@ public class AdminViewComplaintActivity extends AppCompatActivity {
     }
 
     private void setComplaint() {
+        binding.viewComplaintPRN.setText(selectedComplaint.getStudentId());
+        binding.viewComplaintPRN.setEnabled(false);
+
+        binding.viewComplaintDate.setText(selectedComplaint.getDate());
+        binding.viewComplaintDate.setEnabled(false);
+
         binding.viewComplaintHostelName.setText(selectedComplaint.getHostel());
         binding.viewComplaintHostelName.setEnabled(false);
 
