@@ -93,9 +93,12 @@ public class AddLaundryActivity extends AppCompatActivity {
                 binding.total1.setText(total);
                 //   binding.addcloth.setVisibility(View.VISIBLE);
 
-                if (toi < 24) {
+                if (toi <= 6) {
                     binding.addcloth.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(AddLaundryActivity.this, "You can only add up to 6", Toast.LENGTH_SHORT).show();
                 }
+
                 /*
          this.Date = date;
         this.Total = total;
@@ -142,8 +145,9 @@ public class AddLaundryActivity extends AppCompatActivity {
                 String total = String.valueOf(toi);
                 binding.total1.setText(total);
 
-                if (toi > 24) {
-                    binding.addcloth.setVisibility(View.INVISIBLE);
+                if (toi > 6) {
+                    Toast.makeText(AddLaundryActivity.this, "You can only add up to 6", Toast.LENGTH_SHORT).show();
+                    return;
                 }
 
                 if (toi == 0) {

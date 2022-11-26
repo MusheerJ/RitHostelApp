@@ -19,7 +19,7 @@ public class StaticActivity extends AppCompatActivity {
     StudentPRN student;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityStaticBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -28,7 +28,10 @@ public class StaticActivity extends AppCompatActivity {
         String StaticDate = getIntent().getStringExtra("Sdate");
 
 
+        getSupportActionBar().hide();
+
         binding.prn2.setText(StaticStudentPRN);
+        binding.date.setText(StaticDate);
         database = FirebaseDatabase.getInstance();
 
         database.getReference().child("LaundryInfo").child(StaticStudentPRN).child(StaticDate).addValueEventListener(new ValueEventListener() {
@@ -49,9 +52,6 @@ public class StaticActivity extends AppCompatActivity {
 
             }
         });
-
-
-
 
 
     }

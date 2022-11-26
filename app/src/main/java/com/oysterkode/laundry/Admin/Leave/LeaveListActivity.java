@@ -3,6 +3,8 @@ package com.oysterkode.laundry.Admin.Leave;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -76,13 +78,66 @@ public class LeaveListActivity extends AppCompatActivity {
                     }
                 });
 
-        binding.backButton.setOnClickListener(new View.OnClickListener() {
+
+        binding.searchComplaint.setOnQueryTextFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
-            public void onClick(View v) {
-                finish();
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+
+                    binding.titleText.setVisibility(View.INVISIBLE);
+                    binding.searchComplaint.getLayoutParams().width = ViewGroup.LayoutParams.MATCH_PARENT;
+
+                    binding.backButton.setVisibility(View.GONE);
+                } else {
+                    binding.titleText.setVisibility(View.VISIBLE);
+                    binding.searchComplaint.getLayoutParams().width = ViewGroup.LayoutParams.WRAP_CONTENT;
+                    binding.backButton.setVisibility(View.VISIBLE);
+                }
+
             }
         });
 
+
+        binding.searchComplaint.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                filter(newText);
+                return false;
+            }
+        });
+
+        binding.backButton.setOnClickListener(v -> finish());
+
+
+    }
+
+    private void filter(String keyword) {
+        ArrayList<Leave> filteredList = new ArrayList<>();
+        if (keyword.isEmpty()) {
+            filteredList.addAll(leaves);
+
+        } else {
+            for (Leave leave : leaves) {
+                String from = leave.getFrom().toLowerCase();
+                String to = leave.getTo().toLowerCase();
+                String prn = leave.getStudentId().toLowerCase();
+                String name = leave.getStudentName().toLowerCase();
+                String destination = leave.getDestination().toLowerCase();
+                String status = leave.getStatus().toLowerCase();
+//                Log.d("TAG", "filter: " + hostel);
+                if (from.contains(keyword) || prn.contains(keyword) || to.contains(keyword) || prn.contains(keyword) || name.contains(keyword)
+                        || destination.contains(keyword) || status.contains(keyword)) {
+                    filteredList.add(leave);
+                }
+
+            }
+        }
+        adapter.filterList(filteredList);
 
     }
 }

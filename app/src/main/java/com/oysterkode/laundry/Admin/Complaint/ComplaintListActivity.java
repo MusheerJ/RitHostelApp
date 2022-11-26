@@ -128,9 +128,10 @@ public class ComplaintListActivity extends AppCompatActivity {
                 String desc = complaint.getDesc().toLowerCase();
                 String category = complaint.getCategory().toLowerCase();
                 String room = complaint.getHostelRoomNumber();
+                String status = complaint.getStatus().toLowerCase();
                 Log.d("TAG", "filter: " + hostel);
                 if (date.contains(keyword) || prn.contains(keyword) || hostel.contains(keyword) || desc.contains(keyword) || category.contains(keyword)
-                        || room.contains(keyword)) {
+                        || room.contains(keyword) || status.contains(keyword)) {
                     filteredList.add(complaint);
                 }
 

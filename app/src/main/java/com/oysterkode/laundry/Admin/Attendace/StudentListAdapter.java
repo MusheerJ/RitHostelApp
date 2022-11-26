@@ -28,12 +28,17 @@ public class StudentListAdapter extends RecyclerView.Adapter<StudentListAdapter.
     private FirebaseDatabase database;
     private String date;
     private String hostel;
+    public int count;
 
     public StudentListAdapter(Context context, ArrayList<Student> students, String date, String hostel) {
         this.context = context;
         this.students = students;
         this.date = date;
         this.hostel = hostel;
+    }
+
+    public void setCount(int c) {
+        this.count = c;
     }
 
     @NonNull
@@ -71,6 +76,7 @@ public class StudentListAdapter extends RecyclerView.Adapter<StudentListAdapter.
             attendance.setStudentName(currentStudent.getStudentName());
             attendance.setDate(date);
             attendance.setRoom(currentStudent.getRoomNo());
+            attendance.setHostel(currentStudent.getHostel());
 
             holder.binding.circle.setVisibility(View.VISIBLE);
 
@@ -97,12 +103,12 @@ public class StudentListAdapter extends RecyclerView.Adapter<StudentListAdapter.
                                     .child(currentStudent.getStudentId())
                                     .child(date)
                                     .setValue(attendance)
-                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void unused) {
-                                            Toast.makeText(context, "Attendance marked", Toast.LENGTH_SHORT).show();
+                                    .addOnSuccessListener(unused1 -> {
+                                        Toast.makeText(context, "Attendance marked", Toast.LENGTH_SHORT).show();
+//                                        AttendanceStudentListActivity.count--;
+                                        count--;
 
-                                        }
+
                                     });
                         }
                     });
@@ -119,6 +125,13 @@ public class StudentListAdapter extends RecyclerView.Adapter<StudentListAdapter.
         return students.size();
     }
 
+    public boolean isAllMarked() {
+        return count == 0;
+    }
+
+    public int getCount() {
+        return count;
+    }
 
     public static class StudentListViewHolder extends RecyclerView.ViewHolder {
 

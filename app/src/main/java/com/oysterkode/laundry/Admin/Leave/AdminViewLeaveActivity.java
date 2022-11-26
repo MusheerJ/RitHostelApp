@@ -78,6 +78,12 @@ public class AdminViewLeaveActivity extends AppCompatActivity {
         binding.leaveStudentName.setText(selectedLeave.getStudentName());
         binding.leaveStudentName.setEnabled(false);
 
+        binding.leaveStudentHostel.setText(selectedLeave.getHostel());
+        binding.leaveStudentHostel.setEnabled(false);
+
+        binding.leaveStudentRoom.setText(selectedLeave.getRoom());
+        binding.leaveStudentRoom.setEnabled(false);
+
         binding.viewLeaveStatus.setText(selectedLeave.getStatus());
 
 

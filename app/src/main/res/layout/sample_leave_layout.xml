@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:fontFamily="@font/inter_medium"
-            android:maxLines="1"
+
             android:scrollHorizontally="true"
             android:text="fdgkjfdglkfdlkgfdlkdjgflgdwsadsdaddassddskj"
             android:textSize="@dimen/_13ssp" />

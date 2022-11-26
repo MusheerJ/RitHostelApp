@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LAUNDRY</string>
+    <string name="app_name">Rit Hostel</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="rit_hostel">RIT HOSTEL</string>
@@ -17,6 +17,7 @@
 
 
     <string name="student_name">Student Name</string>
+    <string name="student_mail">Student Email</string>
     <string name="student_prn">Student PRN</string>
     <string name="duration">Duration</string>
     <string name="reason">Reason</string>
@@ -28,6 +29,7 @@
 
 
     <string name="enter_name">Enter Student Name</string>
+    <string name="enter_email">Enter Student Email</string>
     <string name="enter_duration">Enter Duration</string>
     <string name="enter_destination">Enter Destination</string>
     <string name="enter_parent_contact">Enter Parent Contact</string>

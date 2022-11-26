@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -161,10 +162,14 @@ public class LaundryDetailsActivity extends AppCompatActivity {
         binding.addclothing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(LaundryDetailsActivity.this, AddLaundryActivity.class);
-                i.putExtra("PRNN", s);
-                startActivity(i);
-                finish();
+                if (TotalValue != 0) {
+
+                    Intent i = new Intent(LaundryDetailsActivity.this, AddLaundryActivity.class);
+                    i.putExtra("PRNN", s);
+                    startActivity(i);
+                } else {
+                    Toast.makeText(LaundryDetailsActivity.this, "Monthly limit over", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

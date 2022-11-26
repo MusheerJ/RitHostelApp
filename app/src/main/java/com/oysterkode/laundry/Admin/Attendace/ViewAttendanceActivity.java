@@ -59,7 +59,10 @@ public class ViewAttendanceActivity extends AppCompatActivity {
 
                         for (DataSnapshot snapshot1 : snapshot.getChildren()) {
                             Attendance attendance = snapshot1.getValue(Attendance.class);
-                            attendances.add(attendance);
+                            if (hostel.equals(attendance.getHostel())) {
+
+                                attendances.add(attendance);
+                            }
                         }
                         adapter.notifyDataSetChanged();
                         dialog.dismiss();

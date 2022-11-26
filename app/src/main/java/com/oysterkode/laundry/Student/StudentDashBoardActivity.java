@@ -44,7 +44,8 @@ public class StudentDashBoardActivity extends AppCompatActivity {
             startActivity(new Intent(this, ComplaintRegistrationActivity.class));
         });
 
-        binding.studentAttendance.setOnClickListener(view -> {
+
+        binding.Attendance.setOnClickListener(view -> {
             try {
                 startActivity(new Intent(this, StudentViewAttendanceActivity.class));
 
@@ -52,6 +53,12 @@ public class StudentDashBoardActivity extends AppCompatActivity {
                 Log.d("TAG", "onCreate: " + e.getMessage());
             }
 
+        });
+
+
+        binding.Profile.setOnClickListener(view -> {
+
+            startActivity(new Intent(this, StudentProfileActivity.class));
         });
 
         binding.dashBoardHead.setOnClickListener(v -> {

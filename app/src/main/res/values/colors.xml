@@ -19,8 +19,16 @@
     <color name="dark_yellow">#EEA620</color>
     <color name="low_red">#F5C5D0</color>
     <color name="dark_red">#DE3C63</color>
+    <color name="dark_blue">#3D5AFE</color>
+    <color name="low_blue">#C4E1FB</color>
+
+    <color name="dark_orange">#D50000</color>
+    <color name="low_orange">#FFCBCB</color>
+
+
+
     <color name="title_text">#1A1A1A</color>
-    <color name="desc_text">#919CA5</color>
+    <color name="desc_text">#555D62</color>
     <color name="bg_color">#F7F8FA</color>
     <color name="low_pink">#F0CEE8</color>
     <color name="dark_pink">#EE3FC4</color>

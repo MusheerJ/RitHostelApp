@@ -3,6 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android Projects/Capstone Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_add_student2.xml" value="0.2046875" />
+        <entry key="..\:/Android Projects/Capstone Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_admin3.xml" value="0.176" />
+        <entry key="..\:/Android Projects/Capstone Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_admin_dash_board.xml" value="0.2046875" />
+        <entry key="..\:/Android Projects/Capstone Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_main.xml" value="0.2046875" />
+        <entry key="..\:/Android Projects/Capstone Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_static.xml" value="0.2046875" />
+        <entry key="..\:/Android Projects/Capstone Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_student_list.xml" value="0.2046875" />
+        <entry key="..\:/Android Projects/Capstone Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_student_profile.xml" value="0.2046875" />
+        <entry key="..\:/Android Projects/Capstone Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_student_view_attendance.xml" value="0.2046875" />
+        <entry key="..\:/Android Projects/Capstone Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_user1.xml" value="0.2046875" />
+        <entry key="..\:/Android Projects/Capstone Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_view_student.xml" value="0.2046875" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/drawable/home_item.xml" value="0.216" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/drawable/ic_add.xml" value="0.216" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/drawable/ic_approve_leave.xml" value="0.216" />
@@ -17,8 +27,8 @@
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_add_p_r_n.xml" value="0.2046875" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_admin2.xml" value="0.2046875" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_admin3.xml" value="0.2046875" />
-        <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_admin_dash_board.xml" value="0.2046875" />
-        <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_admin_view_complaint.xml" value="0.264" />
+        <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_admin_dash_board.xml" value="0.152" />
+        <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_admin_view_complaint.xml" value="0.176" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_admin_view_leave.xml" value="0.2" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_apply_leave.xml" value="0.176" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_attendance_parameter_selection.xml" value="0.264" />
@@ -26,13 +36,14 @@
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_complaint_list.xml" value="0.264" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_complaint_registration.xml" value="0.264" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_leave_history.xml" value="0.2046875" />
-        <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_leave_list.xml" value="0.152" />
+        <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_leave_list.xml" value="0.264" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_main1.xml" value="0.2046875" />
-        <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_mark_attendace.xml" value="0.136" />
+        <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_mark_attendace.xml" value="0.2" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_new_login.xml" value="0.1875" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_static.xml" value="0.2046875" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_student_dash_board.xml" value="0.2" />
+        <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_student_list.xml" value="0.2" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_student_profile.xml" value="0.264" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_student_view_attendance.xml" value="0.2046875" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_update_student_profile.xml" value="0.2046875" />
@@ -42,12 +53,14 @@
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_view_complaint.xml" value="0.2" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_view_complaint_history.xml" value="0.2046875" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_view_leave.xml" value="0.2" />
+        <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/activity_view_student.xml" value="0.176" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/attendance_mark.xml" value="0.264" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/container_page3.xml" value="0.2046875" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/home_list_item.xml" value="0.2046875" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/main_activity_adapter.xml" value="0.2046875" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/report_detail_adapter_item.xml" value="0.2046875" />
-        <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/sample_leave_layout.xml" value="0.152" />
+        <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/sample_leave_layout.xml" value="0.264" />
+        <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/sample_student_layout.xml" value="0.4" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/layout/student_attendance_layout.xml" value="0.4" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/menu/main_menu.xml" value="0.2046875" />
         <entry key="..\:/Android Projects/LaundryApp-main/LaundryApp-main/app/src/main/res/menu/student_profile_menu.xml" value="0.2046875" />

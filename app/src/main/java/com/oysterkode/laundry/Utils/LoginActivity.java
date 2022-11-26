@@ -56,6 +56,11 @@ public class LoginActivity extends AppCompatActivity {
             finish();
         }
 
+        binding.club.setOnClickListener(view -> {
+            startActivity(new Intent(this, AdminDashBoardActivity.class));
+            finish();
+        });
+
         // Creating account Using Email ------>
         binding.CreateAC.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -5,17 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_color"
-    tools:context=".Admin.Leave.AdminViewLeaveActivity">
+    tools:context=".Admin.StudentManagement.ViewStudentActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/assignTaskBar"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/_50sdp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:visibility="visible"
         app:cardBackgroundColor="@color/bg_color"
         app:cardElevation="0.1dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
 
         <ImageButton
             android:id="@+id/back_button"
@@ -27,13 +29,15 @@
             android:background="@drawable/ic_back" />
 
         <TextView
+            android:id="@+id/titleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/inter_medium"
-            android:text="Student Leave Details"
+            android:text="Student Details"
             android:textColor="@color/title_text"
-            android:textSize="@dimen/_16ssp" />
+            android:textSize="@dimen/_16ssp"
+            android:visibility="visible" />
 
     </androidx.cardview.widget.CardView>
 
@@ -75,23 +79,20 @@
                 app:cardCornerRadius="@dimen/_5sdp">
 
                 <EditText
-                    android:id="@+id/leaveStudentPRN"
+                    android:id="@+id/viewStudentPRN"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="top"
                     android:backgroundTint="@color/white"
                     android:fontFamily="@font/inter_medium"
-                    android:hint="@string/enter_name"
+                    android:hint="@string/student_prn"
                     android:inputType="text"
+                    android:enabled="false"
                     android:padding="@dimen/_10sdp"
                     android:textColor="@color/task_text"
                     android:textSize="@dimen/_12ssp" />
 
             </androidx.cardview.widget.CardView>
-
-
-
-
 
             <TextView
                 android:layout_width="wrap_content"
@@ -109,7 +110,7 @@
                 app:cardCornerRadius="@dimen/_5sdp">
 
                 <EditText
-                    android:id="@+id/leaveStudentName"
+                    android:id="@+id/viewStudentName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="top"
@@ -117,67 +118,7 @@
                     android:fontFamily="@font/inter_medium"
                     android:hint="@string/enter_name"
                     android:inputType="text"
-                    android:padding="@dimen/_10sdp"
-                    android:textColor="@color/task_text"
-                    android:textSize="@dimen/_12ssp" />
-
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:fontFamily="@font/inter_medium"
-                android:text="Student Hostel"
-                android:textColor="@color/title_text"
-                android:textSize="@dimen/_14ssp" />
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_5sdp"
-                app:cardCornerRadius="@dimen/_5sdp">
-
-                <EditText
-                    android:id="@+id/leaveStudentHostel"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="top"
-                    android:backgroundTint="@color/white"
-                    android:fontFamily="@font/inter_medium"
-                    android:hint="@string/enter_name"
-                    android:inputType="text"
-                    android:padding="@dimen/_10sdp"
-                    android:textColor="@color/task_text"
-                    android:textSize="@dimen/_12ssp" />
-
-            </androidx.cardview.widget.CardView>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:fontFamily="@font/inter_medium"
-                android:text="Student Room No"
-                android:textColor="@color/title_text"
-                android:textSize="@dimen/_14ssp" />
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_5sdp"
-                app:cardCornerRadius="@dimen/_5sdp">
-
-                <EditText
-                    android:id="@+id/leaveStudentRoom"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="top"
-                    android:backgroundTint="@color/white"
-                    android:fontFamily="@font/inter_medium"
-                    android:hint="@string/enter_name"
-                    android:inputType="text"
+                    android:enabled="false"
                     android:padding="@dimen/_10sdp"
                     android:textColor="@color/task_text"
                     android:textSize="@dimen/_12ssp" />
@@ -193,124 +134,15 @@
             <!--Participants-->
 
             <!--descripation-->
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp">
-
-                <RelativeLayout
-                    android:id="@+id/centerinparent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true" />
-
-                <TextView
-                    android:id="@+id/starttext"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/inter_medium"
-                    android:text="From"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_14ssp" />
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/starttext"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:elevation="@dimen/_5sdp"
-                    app:cardCornerRadius="@dimen/_5sdp">
-
-
-                    <TextView
-                        android:id="@+id/startDate"
-                        android:layout_width="@dimen/_100sdp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center|right"
-                        android:layout_marginLeft="@dimen/_25sdp"
-                        android:fontFamily="@font/inter_medium"
-                        android:hint="@string/start_date_msg"
-                        android:padding="@dimen/_7sdp"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_12ssp" />
-
-                </androidx.cardview.widget.CardView>
-
-                <TextView
-                    android:id="@+id/endtext"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/centerinparent"
-                    android:fontFamily="@font/inter_medium"
-                    android:text="To"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_14ssp" />
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/endtext"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:layout_toRightOf="@+id/centerinparent"
-                    app:cardCornerRadius="@dimen/_5sdp">
-
-
-                    <TextView
-                        android:id="@+id/dueDate"
-                        android:layout_width="@dimen/_100sdp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/_25sdp"
-                        android:fontFamily="@font/inter_medium"
-                        android:hint="@string/due_date_msg"
-                        android:padding="@dimen/_7sdp"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_12ssp" />
-
-                </androidx.cardview.widget.CardView>
-
-
-            </RelativeLayout>
 
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:fontFamily="@font/inter_medium"
-                android:text="Leave Status"
 
-                android:textColor="@color/title_text"
-                android:textSize="@dimen/_14ssp" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/ComplaintCategory"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:backgroundTint="@color/white"
-                android:fontFamily="@font/inter_medium">
-
-                <AutoCompleteTextView
-                    android:id="@+id/viewLeaveStatus"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:backgroundTint="@color/white"
-                    android:fontFamily="@font/inter_medium"
-                    android:inputType="none"
-                    android:text="Pending"
-                    tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <TextView
-                android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:fontFamily="@font/inter_medium"
-                android:text="Duration"
+                android:text="Hostel"
                 android:textColor="@color/title_text"
                 android:textSize="@dimen/_14ssp" />
 
@@ -321,14 +153,47 @@
                 app:cardCornerRadius="@dimen/_5sdp">
 
                 <EditText
-                    android:id="@+id/leaveDuration"
+                    android:id="@+id/viewStudentHostel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="top"
                     android:backgroundTint="@color/white"
                     android:fontFamily="@font/inter_medium"
-                    android:hint="@string/enter_duration"
+                    android:hint="@string/student_prn"
                     android:inputType="text"
+                    android:enabled="false"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/task_text"
+                    android:textSize="@dimen/_12ssp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/inter_medium"
+                android:text="Room No"
+                android:textColor="@color/title_text"
+                android:textSize="@dimen/_14ssp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_5sdp">
+
+                <EditText
+                    android:id="@+id/viewStudentRoom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/inter_medium"
+                    android:hint="Enter Room"
+                    android:inputType="text"
+                    android:enabled="false"
                     android:padding="@dimen/_10sdp"
                     android:textColor="@color/task_text"
                     android:textSize="@dimen/_12ssp" />
@@ -337,12 +202,12 @@
 
 
             <TextView
-                android:id="@+id/textView1"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:fontFamily="@font/inter_medium"
-                android:text="Destination"
+                android:text="Year"
                 android:textColor="@color/title_text"
                 android:textSize="@dimen/_14ssp" />
 
@@ -353,80 +218,86 @@
                 app:cardCornerRadius="@dimen/_5sdp">
 
                 <EditText
-                    android:id="@+id/leaveDestination"
+                    android:id="@+id/viewStudentYear"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="top"
                     android:backgroundTint="@color/white"
                     android:fontFamily="@font/inter_medium"
-                    android:hint="@string/enter_destination"
+                    android:hint="@string/student_prn"
                     android:inputType="text"
+                    android:enabled="false"
                     android:padding="@dimen/_10sdp"
                     android:textColor="@color/task_text"
                     android:textSize="@dimen/_12ssp" />
 
             </androidx.cardview.widget.CardView>
 
-
             <TextView
-                android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:fontFamily="@font/inter_medium"
-                android:text="Parent Contact"
+                android:text="Branch"
+                android:textColor="@color/title_text"
+                android:textSize="@dimen/_14ssp" />
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_5sdp">
+
+                <EditText
+                    android:id="@+id/viewStudentBranch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/inter_medium"
+                    android:hint="@string/student_prn"
+                    android:inputType="text"
+                    android:enabled="false"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/task_text"
+                    android:textSize="@dimen/_12ssp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_5sdp" />
+
+            <TextView
+                android:id="@+id/textView2aas3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/inter_medium"
+                android:text="Contact"
                 android:textColor="@color/title_text"
                 android:textSize="@dimen/_14ssp" />
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/profileStudentContactCard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp"
                 app:cardCornerRadius="@dimen/_5sdp">
 
                 <EditText
-                    android:id="@+id/leaveParentContact"
+                    android:id="@+id/viewStudentContact"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="top"
                     android:backgroundTint="@color/white"
                     android:fontFamily="@font/inter_medium"
-                    android:hint="@string/enter_parent_contact"
+                    android:hint="Enter Contact"
                     android:inputType="text"
-                    android:padding="@dimen/_10sdp"
-                    android:textColor="@color/task_text"
-                    android:textSize="@dimen/_12ssp" />
-
-            </androidx.cardview.widget.CardView>
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:fontFamily="@font/inter_medium"
-                android:text="@string/reason"
-                android:textColor="@color/black"
-
-                android:textSize="@dimen/_14ssp" />
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:background="@color/white"
-                app:cardCornerRadius="@dimen/_5sdp">
-
-                <EditText
-                    android:id="@+id/leaveReason"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_150sdp"
-                    android:layout_marginBottom="@dimen/_40sdp"
-                    android:backgroundTint="@color/white"
-                    android:fontFamily="@font/inter_medium"
-                    android:gravity="top"
-                    android:hint="This is where you write reason....."
+                    android:enabled="false"
                     android:padding="@dimen/_10sdp"
                     android:textColor="@color/task_text"
                     android:textSize="@dimen/_12ssp" />
@@ -441,31 +312,15 @@
             </androidx.appcompat.widget.LinearLayoutCompat>
 
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+
         </LinearLayout>
     </ScrollView>
-
-    <RelativeLayout
-        android:id="@+id/approveLeave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="@dimen/_20sdp"
-        android:background="@drawable/ic_approve_leave"
-        android:padding="@dimen/_5sdp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:fontFamily="@font/inter_medium"
-            android:paddingBottom="@dimen/_5sdp"
-            android:text="Update Leave"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_14ssp" />
-
-    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

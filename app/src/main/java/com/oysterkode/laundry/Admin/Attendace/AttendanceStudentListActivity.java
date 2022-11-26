@@ -2,7 +2,9 @@ package com.oysterkode.laundry.Admin.Attendace;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,18 +29,20 @@ public class AttendanceStudentListActivity extends AppCompatActivity {
     private ArrayList<Student> students;
     private String date;
     private String hostel;
+    public static int count;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityAttendanceStudentListBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
-
         getSupportActionBar().hide();
-
         date = getIntent().getStringExtra("attendanceDate");
         hostel = getIntent().getStringExtra("attendanceHostel");
+
+
+        count = 0;
 
 
         dialog = new ProgressDialog(this);
@@ -62,11 +66,15 @@ public class AttendanceStudentListActivity extends AppCompatActivity {
                         students.clear();
                         for (DataSnapshot snapshot1 : snapshot.getChildren()) {
                             Student s = snapshot1.getValue(Student.class);
-                            students.add(s);
+                            assert s != null;
+                            if (s.getHostel().equals(hostel)) {
+                                students.add(s);
+                            }
 
                         }
                         dialog.dismiss();
                         adapter.notifyDataSetChanged();
+                        adapter.setCount(students.size());
                     }
 
                     @Override
@@ -78,11 +86,28 @@ public class AttendanceStudentListActivity extends AppCompatActivity {
         binding.backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Log.d("TAG", "onClick: " + adapter.getCount());
+
+                if (!adapter.isAllMarked()) {
+
+                    Toast.makeText(AttendanceStudentListActivity.this, "Mark all attendance!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 finish();
             }
         });
 
     }
 
+    @Override
+    public void onBackPressed() {
 
+        if (!adapter.isAllMarked()) {
+            Toast.makeText(AttendanceStudentListActivity.this, "Mark all attendance!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        super.onBackPressed();
+    }
 }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_color"
-    tools:context=".Admin.Leave.LeaveListActivity">
+    tools:context=".Admin.StudentManagement.StudentListActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/assignTaskBar"
@@ -34,13 +34,13 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/inter_medium"
-            android:text="Student Leaves"
+            android:text="Student List"
             android:textColor="@color/title_text"
             android:textSize="@dimen/_16ssp"
             android:visibility="visible" />
 
         <SearchView
-            android:id="@+id/searchComplaint"
+            android:id="@+id/searchStudent"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/_35sdp"
             android:layout_gravity="right"
@@ -56,12 +56,13 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/adminLeaveRecyler"
+        android:id="@+id/studentRecyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_margin="@dimen/_10sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/assignTaskBar" />
+        app:layout_constraintTop_toBottomOf="@+id/assignTaskBar"
+        tools:listitem="@layout/sample_student_layout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

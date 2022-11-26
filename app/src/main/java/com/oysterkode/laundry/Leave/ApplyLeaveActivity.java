@@ -6,11 +6,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.datepicker.MaterialDatePicker;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.oysterkode.laundry.Paths;
+import com.oysterkode.laundry.Student.Student;
 import com.oysterkode.laundry.databinding.ActivityApplyLeaveBinding;
 
 public class ApplyLeaveActivity extends AppCompatActivity {
@@ -24,6 +30,8 @@ public class ApplyLeaveActivity extends AppCompatActivity {
     private MaterialDatePicker dueDatePicker;
 
     private ProgressDialog dialog;
+    private FirebaseAuth auth;
+    private Student currStudent = null;
 
 
     @Override
@@ -35,6 +43,7 @@ public class ApplyLeaveActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
         database = FirebaseDatabase.getInstance();
+        auth = FirebaseAuth.getInstance();
 
         dialog = new ProgressDialog(this);
         dialog.setMessage("Applying for leave");
@@ -63,6 +72,22 @@ public class ApplyLeaveActivity extends AppCompatActivity {
         binding.dueDate.setOnClickListener(view -> {
             dueDatePicker.show(getSupportFragmentManager(), "MATERIAL_DATE_PICKER");
         });
+
+
+        //fetching current user data
+        database.getReference().child(Paths.STUDENT_INFO).
+                child(auth.getUid())
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        currStudent = snapshot.getValue(Student.class);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
 
 
         binding.applyLeaveBtn.setOnClickListener(view -> {
@@ -118,6 +143,8 @@ public class ApplyLeaveActivity extends AppCompatActivity {
             leave.setReason(binding.leaveReason.getText().toString());
             leave.setStatus(Leave.Status.PENDING);
             leave.setLeaveId(Leave.generateLeaveId());
+            leave.setRoom(currStudent.getRoomNo());
+            leave.setHostel(currStudent.getHostel());
 
 
             database.getReference()

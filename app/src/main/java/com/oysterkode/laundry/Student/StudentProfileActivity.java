@@ -101,7 +101,7 @@ public class StudentProfileActivity extends AppCompatActivity {
 
         binding.profileUpdateBtn.setOnClickListener(v -> {
 
-
+            Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
             if (binding.profileStudentName.getText().toString().isEmpty()) {
                 binding.profileStudentName.setError("Required !!");
                 return;

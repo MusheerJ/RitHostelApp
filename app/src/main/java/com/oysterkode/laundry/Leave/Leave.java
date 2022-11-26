@@ -20,6 +20,25 @@ public class Leave implements Serializable {
     private String reason;
     private String status;
 
+    public String getHostel() {
+        return hostel;
+    }
+
+    public void setHostel(String hostel) {
+        this.hostel = hostel;
+    }
+
+    public String getRoom() {
+        return room;
+    }
+
+    public void setRoom(String room) {
+        this.room = room;
+    }
+
+    private String hostel;
+    private String room;
+
     public String getLeaveId() {
         return leaveId;
     }

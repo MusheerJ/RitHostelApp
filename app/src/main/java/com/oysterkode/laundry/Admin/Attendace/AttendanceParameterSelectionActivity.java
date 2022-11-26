@@ -4,10 +4,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.datepicker.MaterialDatePicker;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.oysterkode.laundry.Paths;
 import com.oysterkode.laundry.R;
 import com.oysterkode.laundry.Student.Student;
 import com.oysterkode.laundry.databinding.ActivityAttendanceParameterSelectionBinding;
@@ -17,6 +24,7 @@ public class AttendanceParameterSelectionActivity extends AppCompatActivity {
     private ActivityAttendanceParameterSelectionBinding binding;
     private MaterialDatePicker.Builder materialDateBuilder;
     private MaterialDatePicker startDatePicker;
+    private FirebaseDatabase database;
 
     private ArrayAdapter hostelAdapter;
 
@@ -28,6 +36,7 @@ public class AttendanceParameterSelectionActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         getSupportActionBar().hide();
 
+        database = FirebaseDatabase.getInstance();
 
         binding.attendanceHostelSelector.setHint("Select hostel");
 
@@ -60,14 +69,33 @@ public class AttendanceParameterSelectionActivity extends AppCompatActivity {
                 return;
             }
 
-            Intent i = new Intent(this, ViewAttendanceActivity.class);
-            i.putExtra("attendanceDate", date);
-            i.putExtra("attendanceHostel", hostel);
-            startActivity(i);
+
+            database.getReference()
+                    .child(Paths.ATTENDANCE_ADMIN)
+                    .child(date)
+                    .addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            if (snapshot.exists()) {
+                                Intent i = new Intent(AttendanceParameterSelectionActivity.this, ViewAttendanceActivity.class);
+                                i.putExtra("attendanceDate", date);
+                                i.putExtra("attendanceHostel", hostel);
+                                startActivity(i);
 
 
-            binding.attendanceHostelSelector.setText(null);
-            binding.attendanceDate.setText(null);
+                                binding.attendanceHostelSelector.setText(null);
+                                binding.attendanceDate.setText(null);
+                            } else {
+                                Toast.makeText(AttendanceParameterSelectionActivity.this, "Attendance not available", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
         });
 
 
@@ -84,15 +112,34 @@ public class AttendanceParameterSelectionActivity extends AppCompatActivity {
                 return;
             }
 
-            Intent i = new Intent(this, AttendanceStudentListActivity.class);
+            Intent i = new Intent(AttendanceParameterSelectionActivity.this, AttendanceStudentListActivity.class);
             i.putExtra("attendanceDate", date);
             i.putExtra("attendanceHostel", hostel);
             startActivity(i);
 
 
-            binding.attendanceHostelSelector
-                    .setText(null);
+            binding.attendanceHostelSelector.setText(null);
             binding.attendanceDate.setText(null);
+
+
+//            database.getReference()
+//                    .child(Paths.ATTENDANCE_ADMIN)
+//                    .child(date)
+//                    .addValueEventListener(new ValueEventListener() {
+//                        @Override
+//                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+////                            if (snapshot.exists() ) {
+////                                Toast.makeText(AttendanceParameterSelectionActivity.this, "Attendance already added for this day", Toast.LENGTH_SHORT).show();
+////                            } else {
+//
+////                            }
+//                        }
+//
+//                        @Override
+//                        public void onCancelled(@NonNull DatabaseError error) {
+//
+//                        }
+//                    });
 
 
         });

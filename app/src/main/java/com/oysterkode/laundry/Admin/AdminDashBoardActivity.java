@@ -10,6 +10,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.oysterkode.laundry.Admin.Attendace.AttendanceParameterSelectionActivity;
 import com.oysterkode.laundry.Admin.Complaint.ComplaintListActivity;
 import com.oysterkode.laundry.Admin.Leave.LeaveListActivity;
+import com.oysterkode.laundry.Admin.StudentManagement.AddStudentActivity;
+import com.oysterkode.laundry.Admin.StudentManagement.StudentListActivity;
 import com.oysterkode.laundry.databinding.ActivityAdminDashBoardBinding;
 
 public class AdminDashBoardActivity extends AppCompatActivity {
@@ -55,6 +57,16 @@ public class AdminDashBoardActivity extends AppCompatActivity {
                 Log.d("NO", "onCreate: " + e.getMessage());
             }
 
+        });
+
+
+        binding.AdminAddStudent.setOnClickListener(view -> {
+            startActivity(new Intent(this, AddStudentActivity.class));
+        });
+
+
+        binding.AdminStudentInfo.setOnClickListener(view -> {
+            startActivity(new Intent(this, StudentListActivity.class));
         });
 
 
