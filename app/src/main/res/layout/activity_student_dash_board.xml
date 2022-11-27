@@ -78,7 +78,7 @@
 
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/_50sdp"
                     android:layout_gravity="center"
                     app:srcCompat="@drawable/laundry_icon" />
 
@@ -110,7 +110,7 @@
 
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/_50sdp"
                     android:layout_gravity="center"
                     android:src="@drawable/leave_icon" />
 
@@ -149,7 +149,7 @@
 
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/_50sdp"
                     android:layout_gravity="center"
                     android:src="@drawable/complaint_icon" />
 
@@ -181,7 +181,7 @@
 
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/_50sdp"
                     android:layout_gravity="center"
                     android:src="@drawable/attendance_icon" />
 
@@ -220,7 +220,7 @@
 
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/_60sdp"
+                    android:layout_height="@dimen/_50sdp"
                     android:layout_gravity="center"
                     android:src="@drawable/student_icon" />
 
@@ -252,7 +252,7 @@
 
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/_50sdp"
                     android:layout_gravity="center"
                     android:src="@drawable/notice_icon" />
 

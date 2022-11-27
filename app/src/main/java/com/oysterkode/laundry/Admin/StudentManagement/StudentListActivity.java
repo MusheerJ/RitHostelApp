@@ -132,4 +132,5 @@ public class StudentListActivity extends AppCompatActivity {
         adapter.filterList(filteredList);
 
     }
+
 }

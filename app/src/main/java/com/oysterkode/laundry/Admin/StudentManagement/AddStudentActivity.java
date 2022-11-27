@@ -55,6 +55,11 @@ public class AddStudentActivity extends AppCompatActivity {
         secondAuth();
 
 
+        binding.backButton.setOnClickListener(view -> {
+
+            finish();
+        });
+
         binding.addStudentBtn.setOnClickListener(view -> {
 
             if (binding.addStudentPRN.getText().toString().isEmpty()) {
@@ -139,7 +144,7 @@ public class AddStudentActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-
+                            student.setUserId(mAuth2.getUid());
                             database.getReference()
                                     .child(Paths.STUDENT_INFO)
                                     .child(mAuth2.getUid())
@@ -215,6 +220,8 @@ public class AddStudentActivity extends AppCompatActivity {
 
         // Returning boolean value
         return (m.matches());
+
+
     }
 
     private void setAdapter() {
@@ -236,4 +243,6 @@ public class AddStudentActivity extends AppCompatActivity {
         binding.addStudentYear.setHint("Select Year");
         binding.addStudentYear.setAdapter(yearAdapter);
     }
+
+
 }

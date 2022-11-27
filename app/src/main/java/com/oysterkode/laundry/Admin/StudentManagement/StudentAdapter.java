@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.oysterkode.laundry.R;
 import com.oysterkode.laundry.Student.Student;
-import com.oysterkode.laundry.databinding.SampleStudentLayoutBinding;
+import com.oysterkode.laundry.databinding.SampleStudentLayout2Binding;
 
 import java.util.ArrayList;
 
@@ -28,7 +28,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
     @NonNull
     @Override
     public StudentViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.sample_student_layout, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.sample_student_layout_2, parent, false);
         return new StudentViewHolder(view);
     }
 
@@ -39,12 +39,14 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
         holder.binding.studentName.setText(student.getStudentName());
         holder.binding.studentPrn.setText(student.getStudentId());
         holder.binding.studentRoom.setText(student.getRoomNo());
+        holder.binding.studentYear.setText(student.getStudentClass());
 
 
         holder.binding.layoutClick.setOnClickListener(v -> {
             Intent i = new Intent(context, ViewStudentActivity.class);
             i.putExtra("selected_student", student);
             context.startActivity(i);
+//            ((StudentListActivity) context).finish();
         });
 
 
@@ -62,11 +64,11 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
 
     public static class StudentViewHolder extends RecyclerView.ViewHolder {
 
-        private final SampleStudentLayoutBinding binding;
+        private final SampleStudentLayout2Binding binding;
 
         public StudentViewHolder(@NonNull View itemView) {
             super(itemView);
-            binding = SampleStudentLayoutBinding.bind(itemView);
+            binding = SampleStudentLayout2Binding.bind(itemView);
         }
     }
 }
